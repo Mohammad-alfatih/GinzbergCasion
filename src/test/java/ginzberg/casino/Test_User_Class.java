@@ -1,4 +1,4 @@
-package marwaspackage;
+package ginzberg.casino;
 
 import org.junit.Assert;
 import org.junit.Before;

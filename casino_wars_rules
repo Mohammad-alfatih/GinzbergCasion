@@ -1,0 +1,17 @@
+
+Order of cards:
+2,3,4,5,6,7,8,9,10,J,Q,K,A
+
+One card for play, One card for dealer
+
+If player card < delaer card, player lose
+
+If player card > dealer card, player win
+
+If cards equal, go to war! another hand dealt to player and dealer.
+
+If cards equal in war, Bonus payout to player!
+
+
+
+

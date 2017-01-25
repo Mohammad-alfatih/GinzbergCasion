@@ -1,4 +1,4 @@
-package marwaspackage;
+package ginzberg.casino;
 
 /**
  * Created by mkulima on 1/25/17.
@@ -8,9 +8,15 @@ public abstract class Game {
     protected double userBalance = 0;
 
 
-    abstract boolean walkAway(User thisUser);
-    abstract boolean placeBet(User thisUser);
-    abstract boolean winOrLose(User thisUser);
+    public boolean walkAway(User thisUser){
+        return false;
+    }
+    public boolean placeBet(User thisUser){
+        return false;
+    }
+    public  boolean winOrLose(User thisUser){
+        return false;
+    }
 
     public double getUserBalance(User thisUser) {
         this.userBalance = thisUser.getBalance();

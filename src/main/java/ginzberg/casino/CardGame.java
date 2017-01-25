@@ -1,15 +1,17 @@
 package ginzberg.casino;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Created by ryangross on 1/25/17.
  */
 public abstract class CardGame extends Game {
-    protected CardDeck cardDeck = new CardDeck();
-    protected ArrayList<Card> userHand = new ArrayList<Card>();
-    protected ArrayList<Card> dealerHand = new ArrayList<Card>();
+    public CardDeck cardDeck = new CardDeck();
+    public ArrayList<Card> userHand = new ArrayList<Card>();
+    public ArrayList<Card> dealerHand = new ArrayList<Card>();
+
+    public CardGame() {
+    }
 
     public CardGame(CardDeck aCardDeck, ArrayList<Card> aUserHand, ArrayList<Card> aDealerHand) {
         this.cardDeck = aCardDeck;
