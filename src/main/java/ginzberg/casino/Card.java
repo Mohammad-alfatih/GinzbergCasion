@@ -19,4 +19,9 @@ public class Card {
     public Ranks getRank() {
         return rank;
     }
+
+    public void seeCard(){
+        System.out.print(getRank() + " of ");
+        System.out.println(getSuit());
+    }
 }

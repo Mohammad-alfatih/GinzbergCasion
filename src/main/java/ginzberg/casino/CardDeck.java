@@ -34,9 +34,14 @@ public class CardDeck {
 
     public void seeFullDeck(){
         for (Card c: cards){
-            System.out.print(c.getRank());
-            System.out.print(" of ");
-            System.out.println(c.getSuit());
+            c.seeCard();
         }
+    }
+
+    public Card getNextCard(){
+        Card nextCard;
+        nextCard = cards.get(0);
+        cards.remove(0);
+        return nextCard;
     }
 }
