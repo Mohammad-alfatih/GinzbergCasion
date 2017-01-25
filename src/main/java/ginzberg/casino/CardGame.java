@@ -36,15 +36,11 @@ public abstract class CardGame extends Game {
         aHand.add(this.cardDeck.getNextCard());
     }
 
-    public String getUserChoice(Scanner aScanner) {
-        return "";
-    }
-
     public double calculateScore() {
         return 0.0;
     }
 
-    // Tentative.
+    // Tentative. Does it need a Scanner?
     public String getUserChoice() {
         return "";
     }
