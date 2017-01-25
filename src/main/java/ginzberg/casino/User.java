@@ -45,7 +45,7 @@ public class User {
     }
 
     public String getUserChoice(){
-        System.out.println("Play or Quit?");
+        System.out.println("Play or Quit? \n Enter 'Y' to play, anything else to quit." );
         Scanner scan = new Scanner(System.in);
         return scan.nextLine();
     }

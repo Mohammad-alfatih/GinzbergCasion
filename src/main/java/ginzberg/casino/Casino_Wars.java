@@ -49,6 +49,10 @@ public class Casino_Wars extends CardGame{
         return userCard.getRank().ordinal() > dealerCard.getRank().ordinal();
     }
 
+    public boolean isUserCardEqualDealerCard(Card userCard, Card dealerCard){
+        return userCard.getRank().ordinal() == dealerCard.getRank().ordinal();
+    }
+
 
 
 
