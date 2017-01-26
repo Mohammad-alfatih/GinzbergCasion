@@ -7,8 +7,6 @@ import java.util.*;
  */
 public class PokerChecker {
 
-
-
     public boolean flushChecker(HashMap<Integer, Card> hand){
         Suits[] suitArray = new Suits[5];
         for (int i = 0; i < 5; i++){
