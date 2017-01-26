@@ -16,7 +16,7 @@ public class WheelTest {
     }
 
     @Test
-    public void getWinningNumberFromSequenceTest() {
+    public void getWinningNumberFromPocketSequenceTest() {
 
         int expected = 8;
         int actual = wheel.getWinningNumberFromPocketSequence(25);
