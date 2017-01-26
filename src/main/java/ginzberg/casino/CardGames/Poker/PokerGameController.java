@@ -14,7 +14,13 @@ class PokerGameController {
     PokerPayout payout = new PokerPayout();
     PokerInputParser parser = new PokerInputParser();
     PokerChecker checker = new PokerChecker();
+<<<<<<< HEAD
     UserIO pokerPlayer = new UserIO();
+=======
+
+
+    String promtUserForBetAmount;
+>>>>>>> 9afa09ee822774bb2ad6424bc0bf7068b7bf41f2
 
 
     HashMap<Integer, String> gameType = new HashMap<>();
@@ -26,6 +32,7 @@ class PokerGameController {
     }
 
     void playPoker() {
+<<<<<<< HEAD
         pokerPlayer.getUserInput();
         pokerPlayer.welcome();
         while (pokerPlayer.getPlayAgain() == true) {
@@ -44,5 +51,24 @@ class PokerGameController {
             pokerPlayer.anotherRound();
             pokerPlayer.getPlayAgain();
         }
+=======
+//        System.out.println("What game would you like to play?");
+//        System.out.println("(Enter '1' for 'Jacks Or Better)\n Enter '2' for 'Tens or Better'\n Enter '3' " +
+//                        "for 'Aces and Eights'\n Enter '4' for 'Double Bonus'");
+//        payout.setGamePayoutOdds(gameType.get(sc.next()));
+        System.out.println(payout.gamePayoutOdds);
+        //pokerCards.deck.shuffle();
+        pokerCards.dealHand();
+        System.out.format("Enter the amount you would like to bet (Between 1 and %d):\n", (int) playerMoney);
+        payout.setBetSize(sc.nextInt());
+        System.out.println("your hand is: ");
+        System.out.println(pokerCards.showHand());
+        System.out.println("which cards would you like to exchange? (enter \"none\" to keep hand as is):");
+        pokerCards.setCardsToReplace(parser.parseUserInput(sc.next()));
+        pokerCards.replaceCards();
+        System.out.println(pokerCards.showHand());
+        System.out.println(checker.getWinConditionThatIsMet(pokerCards.playerHand));
+
+>>>>>>> 9afa09ee822774bb2ad6424bc0bf7068b7bf41f2
     }
 }
