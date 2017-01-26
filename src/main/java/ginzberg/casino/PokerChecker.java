@@ -87,6 +87,10 @@ public class PokerChecker {
         return countOfMatchesFromRight;
     }
 
+    public boolean fullHouseChecker(HashMap<Integer, Card> hand){
+        return false;
+    }
+
     public String getWinConditionThatIsMet(){
         if (flushChecker(playerHand) && straightChecker(playerHand) && royalChecker()){
             return "royalFlush";
@@ -94,6 +98,8 @@ public class PokerChecker {
             return "straightFlush";
         } else if (fourOfAKindChecker(playerHand)){
             return "fourOfAKind";
+        } else if (fullHouseChecker(playerHand)) {
+
         }
 
         return "lostHand";
