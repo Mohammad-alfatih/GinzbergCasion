@@ -10,7 +10,7 @@ public class UserIO {
     // Should these be static?
     protected static double userBalance = 100.0;
     public static String userName;
-    protected Scanner userInput = new Scanner(System.in);
+    public Scanner userInput = new Scanner(System.in);
     protected boolean playAgain = true;
 
     public UserIO(double aBalance, String aName) {

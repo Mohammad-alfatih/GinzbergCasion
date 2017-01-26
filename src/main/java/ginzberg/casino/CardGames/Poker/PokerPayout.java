@@ -22,12 +22,10 @@ class PokerPayout {
                 gamePayoutOdds.put("threeOfAKind", 3);
                 gamePayoutOdds.put("straight", 4);
                 gamePayoutOdds.put("flush", 5);
-                gamePayoutOdds.put("fullHouse", 8);
-                gamePayoutOdds.put("fourOther", 25);
-                gamePayoutOdds.put("fourSevens", 50);
-                gamePayoutOdds.put("fourAcesorEights", 80);
+                gamePayoutOdds.put("fullHouse", 9);
+                gamePayoutOdds.put("fourOfAKind", 25);
                 gamePayoutOdds.put("straightFlush", 50);
-                gamePayoutOdds.put("royalFlush", 250);
+                gamePayoutOdds.put("royalFlush", 800);
                 break;
 
             case "tensOrBetter":

@@ -46,7 +46,7 @@ public class PokerCardHandler {
 
     void setCardsToReplace(int[] cardNumber) {
         for (int i = 0; i < cardNumber.length; i++) {
-            cardsToReplace.replace(cardNumber[i], false, true);
+            cardsToReplace.put(cardNumber[i], true);
         }
     }
 

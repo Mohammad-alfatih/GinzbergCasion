@@ -165,7 +165,8 @@ public class PokerChecker {
         Arrays.sort(rankOrdinalArray);
         if(checkForJacksOrBetterPairAroundPosition2(rankOrdinalArray) || checkForJacksOrBetterPairAroundPosition4(rankOrdinalArray)){
             return true;
-        } else {return false;}
+        }
+        return false;
     }
 
     public String getWinConditionThatIsMet(HashMap<Integer, Card> playerHand){
@@ -189,4 +190,6 @@ public class PokerChecker {
             return "jacksOrBetter";
         } else { return "lostHand";}
     }
+
+
 }
