@@ -12,6 +12,7 @@ public class UserIO {
     public static String userName;
     protected Scanner userInput = new Scanner(System.in);
     protected boolean playAgain = true;
+ //   protected int currentBet;
 
     public UserIO(double aBalance, String aName) {
         this.userBalance = aBalance;

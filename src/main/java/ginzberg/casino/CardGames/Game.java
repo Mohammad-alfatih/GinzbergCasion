@@ -24,7 +24,7 @@ public abstract class Game {
     }
 
     public double adjustUserBalance(double adjustByAmount, User thisUser) {
-        thisUser.changeUserBalance(adjustByAmount);
+    //    thisUser.changeUserBalance(adjustByAmount);
         this.userBalance = thisUser.getBalance();
         return this.userBalance;
     }

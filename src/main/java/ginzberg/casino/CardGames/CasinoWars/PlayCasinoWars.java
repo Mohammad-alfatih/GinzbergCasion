@@ -8,8 +8,8 @@ import ginzberg.casino.CardGames.User;
  */
 public class PlayCasinoWars {
     Casino_Wars casinoWars = new Casino_Wars();
-    User wooMan = new User("Woo Man", 1000);
-    double userBet = 0;
+   // User wooMan = new User("Woo Man", 1000);
+   // double userBet = 0;
 
 
     /* public boolean isUserCardGreaterThanDealerCard(){
@@ -18,6 +18,8 @@ public class PlayCasinoWars {
         return getCardValue(casinoWars.userCard)>getCardValue(casinoWars.dealerCard);
     } */
 
+
+    // NOTE: Does NOT account for Aces
     public boolean isUserCardGreaterThanDealerCard(Card userCard, Card dealerCard){
         return userCard.getRank().ordinal() > dealerCard.getRank().ordinal();
     }

@@ -15,6 +15,7 @@ public class mainToRunTheseClasses {
     public static Card dealerHand;
     public static  String userAction;
 
+    /*
      public static void main(String[] args) {  // main method number 1
 
          userAction = "Y";
@@ -49,10 +50,10 @@ public class mainToRunTheseClasses {
               }
 
           userAction = wooMan.getUserChoice();
+*/
+     //     } // END WHILE
 
-          } // END WHILE
-
-    }  // end main method number 1
+   // }  // end main method number 1
 
     /* public static void main(String[] args) {
         PlayCasinoWars playCasinoWars = new PlayCasinoWars();
@@ -71,8 +72,7 @@ public class mainToRunTheseClasses {
             System.out.println("Your new balance is: " + playCasinoWars.wooMan.getBalance());
         }
 
-    } */
-
+    }
     public static void dealNPlay(){
         //System.out.println(casinoWars.dealerDeck.toString());
         System.out.println("\n player hand:");
@@ -87,5 +87,5 @@ public class mainToRunTheseClasses {
         System.out.println(dealerHand.toString());
     }
 
-
+*/
 }

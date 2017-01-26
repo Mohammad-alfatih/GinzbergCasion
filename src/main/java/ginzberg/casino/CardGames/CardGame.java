@@ -9,6 +9,7 @@ public abstract class CardGame extends Game {
     protected CardDeck cardDeck = new CardDeck();
     protected ArrayList<Card> userHand = new ArrayList<Card>();
     protected ArrayList<Card> dealerHand = new ArrayList<Card>();
+    protected double currentBet;
 
     public CardGame() {
 
@@ -33,6 +34,11 @@ public abstract class CardGame extends Game {
     // Getter
     public ArrayList<Card> getUserHand() {
         return this.userHand;
+    }
+
+    // Getter
+    public double getCurrentBet() {
+        return this.currentBet;
     }
 
     // Getter

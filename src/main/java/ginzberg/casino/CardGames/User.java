@@ -22,15 +22,18 @@ public class User {
         return this.balance;
     }
 
+    /*
     public double changeUserBalance(double changeBy) {
         this.balance += (isUserBalancePositive()) ?  changeBy : 0;
         return this.balance;
     }
+    */
 
-
+    /*
     private boolean isUserBalancePositive(){
         return this.balance>=0 ? true : false;
     }
+    */
 
     public String toString(){
         return "Name: " + this.name + "\n Bal: " + this.balance;
@@ -40,7 +43,7 @@ public class User {
         System.out.println("Your balance is: " + this.balance + "\n How Much do you want to bet?");
         Scanner scan = new Scanner(System.in);
         double betAmount = scan.nextDouble();
-        changeUserBalance(-betAmount);
+      //  changeUserBalance(-betAmount);
         return betAmount;
     }
 
