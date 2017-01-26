@@ -1,5 +1,6 @@
 package ginzberg.casino;
 
+import ginzberg.casino.CardGames.CardDeck;
 import org.junit.Test;
 
 /**
