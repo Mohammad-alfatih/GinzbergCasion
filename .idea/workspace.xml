@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08b3f016-7aeb-4dd3-90fe-ea746987b2fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GinzbergerCasino.iml" afterPath="$PROJECT_DIR$/GinzbergerCasino.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ginzberg/casino/BlackJack$1.class" afterPath="$PROJECT_DIR$/target/classes/ginzberg/casino/BlackJack$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ginzberg/casino/BlackJack.class" afterPath="$PROJECT_DIR$/target/classes/ginzberg/casino/BlackJack.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ginzberg/casino/UserIO.class" afterPath="$PROJECT_DIR$/target/classes/ginzberg/casino/UserIO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ginzberg/casino/BlackJack.java" afterPath="$PROJECT_DIR$/src/main/java/ginzberg/casino/BlackJack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ginzberg/casino/CardGame.java" afterPath="$PROJECT_DIR$/src/main/java/ginzberg/casino/CardGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ginzberg/casino/Casino.java" afterPath="$PROJECT_DIR$/src/main/java/ginzberg/casino/Casino.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ginzberg/casino/UserIO.java" afterPath="$PROJECT_DIR$/src/main/java/ginzberg/casino/UserIO.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,14 +26,22 @@
       <file leaf-file-name="BlackJack.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ginzberg/casino/BlackJack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="159" column="87" lean-forward="false" selection-start-line="159" selection-start-column="87" selection-end-line="159" selection-end-column="87" />
-              <folding />
+            <state relative-caret-position="234">
+              <caret line="72" column="30" lean-forward="false" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>userBalance</find>
+      <find>total</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,8 +55,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/ginzberg/casino/CardGame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ginzberg/casino/Casino.java" />
         <option value="$PROJECT_DIR$/src/main/java/ginzberg/casino/UserIO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ginzberg/casino/Casino.java" />
         <option value="$PROJECT_DIR$/src/main/java/ginzberg/casino/BlackJack.java" />
       </list>
     </option>
@@ -563,15 +572,15 @@
       <option name="presentableId" value="Default" />
       <updated>1485434440949</updated>
       <workItem from="1485434443332" duration="15000" />
-      <workItem from="1485434461754" duration="1319000" />
+      <workItem from="1485434461754" duration="8747000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1334000" />
+    <option name="totallyTimeSpent" value="8762000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="709" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="709" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -620,26 +629,36 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ginzberg/casino/UserIO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ginzberg/casino/Card.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+        <state relative-caret-position="75">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
-            <marker date="1485435602000" expanded="true" signature="53:96" ph="/**...*/" />
-            <marker date="1485435602000" expanded="true" signature="383:458" ph="{...}" />
-            <marker date="1485435602000" expanded="true" signature="480:488" ph="{...}" />
-            <marker date="1485435602000" expanded="true" signature="522:559" ph="{...}" />
-            <marker date="1485435602000" expanded="true" signature="611:657" ph="{...}" />
-            <marker date="1485435602000" expanded="true" signature="694:729" ph="{...}" />
-            <marker date="1485435602000" expanded="true" signature="765:803" ph="{...}" />
-            <marker date="1485435602000" expanded="true" signature="839:877" ph="{...}" />
-            <marker date="1485435602000" expanded="true" signature="907:951" ph="{...}" />
-            <marker date="1485435602000" expanded="true" signature="979:1199" ph="{...}" />
-            <marker date="1485435602000" expanded="true" signature="1347:1603" ph="{...}" />
-            <marker date="1485435602000" expanded="true" signature="1632:1880" ph="{...}" />
-            <marker date="1485435602000" expanded="true" signature="1943:2026" ph="{...}" />
-            <marker date="1485435602000" expanded="true" signature="2072:2116" ph="{...}" />
-            <marker date="1485435602000" expanded="true" signature="2152:2273" ph="{...}" />
+            <marker date="1485391429000" expanded="true" signature="26:74" ph="/**...*/" />
+            <marker date="1485391429000" expanded="true" signature="176:235" ph="{...}" />
+            <marker date="1485391429000" expanded="true" signature="264:292" ph="{...}" />
+            <marker date="1485391429000" expanded="true" signature="321:349" ph="{...}" />
+            <marker date="1485391429000" expanded="true" signature="376:468" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ginzberg/casino/CardGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding>
+            <marker date="1485434496000" expanded="true" signature="55:98" ph="/**...*/" />
+            <marker date="1485434496000" expanded="false" signature="240:246" ph="&lt;~&gt;" />
+            <marker date="1485434496000" expanded="false" signature="306:312" ph="&lt;~&gt;" />
+            <marker date="1485434496000" expanded="true" signature="339:347" ph="{...}" />
+            <marker date="1485434496000" expanded="true" signature="445:561" ph="{...}" />
+            <marker date="1485434496000" expanded="true" signature="630:707" ph="{...}" />
+            <marker date="1485434496000" expanded="true" signature="767:807" ph="{...}" />
+            <marker date="1485434496000" expanded="true" signature="864:901" ph="{...}" />
+            <marker date="1485434496000" expanded="true" signature="960:999" ph="{...}" />
+            <marker date="1485434496000" expanded="true" signature="1049:1104" ph="{...}" />
+            <marker date="1485434496000" expanded="true" signature="1183:1209" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -662,44 +681,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ginzberg/casino/CardGame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ginzberg/casino/Casino.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+        <state relative-caret-position="195">
+          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
           <folding>
-            <marker date="1485434496000" expanded="true" signature="55:98" ph="/**...*/" />
-            <marker date="1485434496000" expanded="false" signature="240:246" ph="&lt;~&gt;" />
-            <marker date="1485434496000" expanded="false" signature="306:312" ph="&lt;~&gt;" />
-            <marker date="1485434496000" expanded="true" signature="339:347" ph="{...}" />
-            <marker date="1485434496000" expanded="true" signature="445:561" ph="{...}" />
-            <marker date="1485434496000" expanded="true" signature="630:707" ph="{...}" />
-            <marker date="1485434496000" expanded="true" signature="767:807" ph="{...}" />
-            <marker date="1485434496000" expanded="true" signature="864:901" ph="{...}" />
-            <marker date="1485434496000" expanded="true" signature="960:999" ph="{...}" />
-            <marker date="1485434496000" expanded="true" signature="1049:1104" ph="{...}" />
-            <marker date="1485434496000" expanded="true" signature="1183:1209" ph="{...}" />
+            <marker date="1485447265000" expanded="true" signature="26:69" ph="/**...*/" />
+            <marker date="1485447265000" expanded="true" signature="129:300" ph="{...}" />
+            <marker date="1485447265000" expanded="true" signature="341:575" ph="{...}" />
+            <marker date="1485447265000" expanded="true" signature="612:668" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ginzberg/casino/Casino.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ginzberg/casino/UserIO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="144">
+          <caret line="70" column="19" lean-forward="false" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="19" />
           <folding>
-            <marker date="1485435590000" expanded="true" signature="26:69" ph="/**...*/" />
-            <marker date="1485435590000" expanded="true" signature="129:300" ph="{...}" />
-            <marker date="1485435590000" expanded="true" signature="341:575" ph="{...}" />
-            <marker date="1485435590000" expanded="true" signature="612:668" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="53:96" ph="/**...*/" />
+            <marker date="1485447140000" expanded="true" signature="383:458" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="480:488" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="522:559" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="611:657" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="694:729" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="765:803" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="839:877" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="907:951" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="979:1199" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="1347:1603" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="1632:1880" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="1943:2026" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="2072:2116" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="2152:2273" ph="{...}" />
+            <marker date="1485447140000" expanded="true" signature="2346:2479" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ginzberg/casino/BlackJack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="159" column="87" lean-forward="false" selection-start-line="159" selection-start-column="87" selection-end-line="159" selection-end-column="87" />
-          <folding />
+        <state relative-caret-position="234">
+          <caret line="72" column="30" lean-forward="false" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -87,6 +87,14 @@ public class UserIO {
         return answer;
     }
 
+
+    // Current Balance Method
+
+    public String displayUserBalance() {
+        String answer = "Your current balance is $" + userBalance;
+        System.out.println(answer);
+        return answer;
+    }
     // setter
 
 
