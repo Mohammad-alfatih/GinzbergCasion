@@ -6,14 +6,8 @@ import java.util.*;
  * Created by williammattern on 1/25/17.
  */
 public class PokerChecker {
-    CardDeck deck = new CardDeck();
-    HashMap<Integer, Card> playerHand = new HashMap<Integer, Card>(5);
-    {
 
-        for (Integer i = 0; i < 5; i++) {
-            playerHand.put(i, deck.getNextCard());
-        }
-    }
+
 
     public boolean flushChecker(HashMap<Integer, Card> hand){
         Suits[] suitArray = new Suits[5];
@@ -45,8 +39,13 @@ public class PokerChecker {
         } else { return false; }
     }
 
-    public boolean royalChecker(){
-        return false;
+    public boolean royalChecker(HashMap<Integer, Card> hand){
+        int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
+        for (int i: rankOrdinalArray){
+            if (i > 0 && i < 9){
+                return false;
+            }
+        } return true;
     }
 
     public int[] convertToRankOrdinalArray(HashMap<Integer, Card> hand){
@@ -68,7 +67,7 @@ public class PokerChecker {
     }
 
     public int countOfMatchesFromLeft(int[] rankOrdinalArray){
-        int countOfMatchesFromLeft = 0;
+        int countOfMatchesFromLeft = 1;
         for (int i = 0; i < rankOrdinalArray.length; i++){
             if (rankOrdinalArray[i] == rankOrdinalArray[i + 1]){
                 countOfMatchesFromLeft++;
@@ -78,8 +77,8 @@ public class PokerChecker {
     }
 
     public int countOfMatchesFromRight(int[] rankOrdinalArray){
-        int countOfMatchesFromRight = 0;
-        for (int i = rankOrdinalArray.length; i < 0; i--){
+        int countOfMatchesFromRight = 1;
+        for (int i = rankOrdinalArray.length - 1; i > 0; i--){
             if (rankOrdinalArray[i] == rankOrdinalArray[i-1]){
                 countOfMatchesFromRight++;
             } else {return countOfMatchesFromRight;}
@@ -88,20 +87,104 @@ public class PokerChecker {
     }
 
     public boolean fullHouseChecker(HashMap<Integer, Card> hand){
+        int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
+        Arrays.sort(rankOrdinalArray);
+        int countFromLeft = countOfMatchesFromLeft(rankOrdinalArray);
+        int countFromRight = countOfMatchesFromRight(rankOrdinalArray);
+        if((countFromLeft == 3 && countFromRight == 2) || (countFromLeft == 2 && countFromRight == 3)){
+            return true;
+        } else {return false;}
+    }
+
+    public int countOfMatchesFromPosition2(int[] rankOrdinalArray){
+        int countOfMatchesFromPosition2 = 1;
+        for (int i = 1; i < rankOrdinalArray.length; i++){
+            if (rankOrdinalArray[i] == rankOrdinalArray[i+1]){
+                countOfMatchesFromPosition2++;
+            } else {return countOfMatchesFromPosition2;}
+        }
+        return countOfMatchesFromPosition2;
+    }
+
+    public boolean tripsChecker(HashMap<Integer, Card> hand){
+        int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
+        Arrays.sort(rankOrdinalArray);
+        int countFromLeft, countFromRight, countFromPosition2;
+        countFromLeft = countOfMatchesFromLeft(rankOrdinalArray);
+        countFromRight = countOfMatchesFromRight(rankOrdinalArray);
+        countFromPosition2 = countOfMatchesFromPosition2(rankOrdinalArray);
+        if (countFromLeft == 3 || countFromPosition2 == 3 || countFromRight == 3){
+            return true;
+        } else
         return false;
     }
 
-    public String getWinConditionThatIsMet(){
-        if (flushChecker(playerHand) && straightChecker(playerHand) && royalChecker()){
+
+    public boolean checkForPairAroundPosition2(int[] rankOrdinalArray){
+        if (rankOrdinalArray[1] == rankOrdinalArray[0] || rankOrdinalArray[1] == rankOrdinalArray[2]){
+            return true;
+        } else {return false;}
+    }
+
+    public boolean checkForPairAroundPosition4(int[] rankOrdinalArray){
+        if (rankOrdinalArray[3] == rankOrdinalArray[2] || rankOrdinalArray[3] == rankOrdinalArray[4]){
+            return true;
+        } else {return false;}
+    }
+
+    public boolean checkForJacksOrBetterPairAroundPosition2(int[] rankOrdinalArray){
+        if (rankOrdinalArray[1] == rankOrdinalArray[0] && (rankOrdinalArray[1] == 0 || rankOrdinalArray[1] > 9)){
+            return true;
+        } else if (rankOrdinalArray[1] == rankOrdinalArray[2] && (rankOrdinalArray[1] == 0 || rankOrdinalArray[1] > 9)) {
+            return true;
+        } else { return false;}
+    }
+
+    public boolean checkForJacksOrBetterPairAroundPosition4(int[] rankOrdinalArray){
+        if (rankOrdinalArray[3] == rankOrdinalArray[2] && (rankOrdinalArray[3] == 0 || rankOrdinalArray[3] > 9)){
+            return true;
+        } else if (rankOrdinalArray[3] == rankOrdinalArray[4] && (rankOrdinalArray[3] == 0 || rankOrdinalArray[3] > 9)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean twoPairChecker(HashMap<Integer, Card> hand){
+        int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
+        Arrays.sort(rankOrdinalArray);
+        if(checkForPairAroundPosition2(rankOrdinalArray) && checkForPairAroundPosition4(rankOrdinalArray)){
+            return true;
+        } else {return false;}
+    }
+
+    public boolean jacksOrBetterChecker(HashMap<Integer, Card> hand){
+        int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
+        Arrays.sort(rankOrdinalArray);
+        if(checkForJacksOrBetterPairAroundPosition2(rankOrdinalArray) || checkForJacksOrBetterPairAroundPosition4(rankOrdinalArray)){
+            return true;
+        } else {return false;}
+    }
+
+    public String getWinConditionThatIsMet(HashMap<Integer, Card> playerHand){
+        if (flushChecker(playerHand) && straightChecker(playerHand) && royalChecker(playerHand)){
             return "royalFlush";
         } else if (flushChecker(playerHand) && straightChecker(playerHand) ){
             return "straightFlush";
         } else if (fourOfAKindChecker(playerHand)){
             return "fourOfAKind";
         } else if (fullHouseChecker(playerHand)) {
-
-        }
-
-        return "lostHand";
+            return "fullHouse";
+        } else if (flushChecker(playerHand)){
+            return "flush";
+        } else if (straightChecker(playerHand)){
+            return "straight";
+        } else if (tripsChecker(playerHand)){
+            return "threeOfAKind";
+        } else if (twoPairChecker(playerHand)){
+            return "twoPair";
+        } else if (jacksOrBetterChecker(playerHand)){
+            return "jacksOrBetter";
+        } else { return "lostHand";}
     }
 }
