@@ -11,6 +11,10 @@ class PokerGameController {
     PokerCardHandler pokerCards = new PokerCardHandler();
     PokerPayout payout = new PokerPayout();
     PokerInputParser parser = new PokerInputParser();
+    PokerChecker checker = new PokerChecker();
+
+
+    String promtUserForBetAmount;
 
     double playerMoney = 100;
 
@@ -28,7 +32,7 @@ class PokerGameController {
 //                        "for 'Aces and Eights'\n Enter '4' for 'Double Bonus'");
 //        payout.setGamePayoutOdds(gameType.get(sc.next()));
         System.out.println(payout.gamePayoutOdds);
-        pokerCards.deck.shuffle();
+        //pokerCards.deck.shuffle();
         pokerCards.dealHand();
         System.out.format("Enter the amount you would like to bet (Between 1 and %d):\n", (int) playerMoney);
         payout.setBetSize(sc.nextInt());
@@ -38,6 +42,7 @@ class PokerGameController {
         pokerCards.setCardsToReplace(parser.parseUserInput(sc.next()));
         pokerCards.replaceCards();
         System.out.println(pokerCards.showHand());
+        System.out.println(checker.getWinConditionThatIsMet(pokerCards.playerHand));
 
     }
 }
