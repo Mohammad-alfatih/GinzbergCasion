@@ -66,7 +66,7 @@ public class Bet {
         if (winningNumber == 0 || winningNumber == 37) {
             return 0;
         } else if ((winningNumber >= 1 && winningNumber <= 10) ||
-                   (winningNumber >= 19 && winningNumber <= 28)) {
+                (winningNumber >= 19 && winningNumber <= 28)) {
             if (winningNumber % 2 == 0) {
                 return 2;
             } else {
@@ -107,7 +107,7 @@ public class Bet {
 
     public int getWinningSplitUpBet(int winningNumber) {
         if (winningNumber == 0 || winningNumber == 37 ||
-            (winningNumber >= 1 && winningNumber <= 3)) {
+                (winningNumber >= 1 && winningNumber <= 3)) {
             return 0;
         } else {
             return winningNumber - 3;
@@ -116,7 +116,7 @@ public class Bet {
 
     public int getWinningSplitDownBet(int winningNumber) {
         if (winningNumber == 0 || winningNumber == 37 ||
-            (winningNumber >= 34 && winningNumber <= 36)) {
+                (winningNumber >= 34 && winningNumber <= 36)) {
             return 0;
         } else {
             return winningNumber;
@@ -125,7 +125,7 @@ public class Bet {
 
     public int getWinningSplitLeftBet(int winningNumber) {
         if (winningNumber == 0 || winningNumber == 37 ||
-            (winningNumber % 3 == 1)) {
+                (winningNumber % 3 == 1)) {
             return 0;
         } else {
             return winningNumber - 1;
@@ -134,7 +134,7 @@ public class Bet {
 
     public int getWinningSplitRightBet(int winningNumber) {
         if (winningNumber == 0 || winningNumber == 37 ||
-            (winningNumber % 3 == 0)) {
+                (winningNumber % 3 == 0)) {
             return 0;
         } else {
             return winningNumber;
@@ -157,8 +157,8 @@ public class Bet {
 
     public int getWinningCornerUpLeftBet(int winningNumber) {
         if (winningNumber == 0 || winningNumber == 37 ||
-            (winningNumber >= 1 && winningNumber <= 3) ||
-            (winningNumber % 3 == 1)) {
+                (winningNumber >= 1 && winningNumber <= 3) ||
+                (winningNumber % 3 == 1)) {
             return 0;
         } else {
             return winningNumber - 4;
@@ -167,8 +167,8 @@ public class Bet {
 
     public int getWinningCornerUpRightBet(int winningNumber) {
         if (winningNumber == 0 || winningNumber == 37 ||
-            (winningNumber >= 1 && winningNumber <= 3) ||
-            (winningNumber % 3 == 0)) {
+                (winningNumber >= 1 && winningNumber <= 3) ||
+                (winningNumber % 3 == 0)) {
             return 0;
         } else {
             return winningNumber - 3;
@@ -177,8 +177,8 @@ public class Bet {
 
     public int getWinningCornerDownRightBet(int winningNumber) {
         if (winningNumber == 0 || winningNumber == 37 ||
-            (winningNumber >= 34 && winningNumber <= 36) ||
-            (winningNumber % 3 == 0)) {
+                (winningNumber >= 34 && winningNumber <= 36) ||
+                (winningNumber % 3 == 0)) {
             return 0;
         } else {
             return winningNumber;
@@ -187,8 +187,8 @@ public class Bet {
 
     public int getWinningCornerDownLeftBet(int winningNumber) {
         if (winningNumber == 0 || winningNumber == 37 ||
-            (winningNumber >= 34 && winningNumber <= 36) ||
-            (winningNumber % 3 == 1)) {
+                (winningNumber >= 34 && winningNumber <= 36) ||
+                (winningNumber % 3 == 1)) {
             return 0;
         } else {
             return winningNumber - 2;
@@ -205,7 +205,7 @@ public class Bet {
 
     public int getWinningLineUpBet(int winningNumber) {
         if (winningNumber == 0 || winningNumber == 37 ||
-            (winningNumber >= 1 && winningNumber <= 3)) {
+                (winningNumber >= 1 && winningNumber <= 3)) {
             return 0;
         } else if (winningNumber % 3 == 0) {
             return winningNumber / 3 - 1;
@@ -216,7 +216,7 @@ public class Bet {
 
     public int getWinningLineDownBet(int winningNumber) {
         if (winningNumber == 0 || winningNumber == 37 ||
-            (winningNumber >= 34 && winningNumber <= 36)) {
+                (winningNumber >= 34 && winningNumber <= 36)) {
             return 0;
         } else if (winningNumber % 3 == 0) {
             return winningNumber / 3;
