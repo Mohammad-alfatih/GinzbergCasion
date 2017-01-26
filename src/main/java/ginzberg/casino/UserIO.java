@@ -11,7 +11,7 @@ public class UserIO {
     protected static double userBalance = 100.0;
     public static String userName;
     protected Scanner userInput = new Scanner(System.in);
-    protected String playAgain = "";
+    protected boolean playAgain = true;
 
     public UserIO(double aBalance, String aName) {
         this.userBalance = aBalance;
@@ -38,7 +38,7 @@ public class UserIO {
         return this.userInput;
     }
 
-    public String getPlayAgain() {
+    public boolean getPlayAgain() {
         return this.playAgain;
     }
 
@@ -68,6 +68,7 @@ public class UserIO {
         System.out.println("How much would you like to bet?");
 
         answer = userInput.next();
+        userBalance -= Integer.parseInt(answer);
         return Integer.parseInt(answer);
     }
 
@@ -79,11 +80,6 @@ public class UserIO {
         System.out.println(aString);
     }
 
-    public String hitOrSurrender() {
-        System.out.println("Hit, or surrender?");
-        String answer = userInput.next();
-        return answer;
-    }
 
     public String anotherRound() {
         System.out.println("Play again?\n Y/N");

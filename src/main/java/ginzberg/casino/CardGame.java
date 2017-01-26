@@ -49,3 +49,4 @@ public class CardGame extends Game {
     public String getUserChoice() {
         return "";
     }
+}
