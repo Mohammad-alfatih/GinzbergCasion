@@ -1,7 +1,5 @@
 package com.michael.wolfe.zipcodecasino;
 
-import ginzberg.casino.CardGames.Card;
-import ginzberg.casino.CardGames.User;
 
 /**
  * Created by mkulima on 1/25/17.

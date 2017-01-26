@@ -1,6 +1,5 @@
 package com.michael.wolfe.zipcodecasino;
 
-import ginzberg.casino.Games.UserIO;
 
 /**
  * Created by rickjackson on 1/25/17.

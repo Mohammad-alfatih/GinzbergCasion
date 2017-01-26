@@ -1,8 +1,5 @@
 package com.michael.wolfe.zipcodecasino;
 
-import ginzberg.casino.CardGames.Card;
-import ginzberg.casino.CardGames.CardGame;
-
 import java.util.ArrayList;
 
 /**

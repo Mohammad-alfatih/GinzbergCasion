@@ -3,10 +3,6 @@ package com.michael.wolfe.zipcodecasino;
 /**
  * Created by ryangross on 1/25/17.
  */
-import ginzberg.casino.CardGames.Card;
-import ginzberg.casino.CardGames.CardGame;
-import ginzberg.casino.CardGames.Ranks;
-import ginzberg.casino.CardGames.UserIO;
 
 import java.util.ArrayList;
 

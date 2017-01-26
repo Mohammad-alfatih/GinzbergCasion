@@ -1,6 +1,5 @@
 package com.michael.wolfe.zipcodecasino;
 
-import ginzberg.casino.CardGames.Card;
 
 import java.util.*;
 
