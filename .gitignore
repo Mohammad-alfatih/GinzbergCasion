@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.class
 
 # Mobile Tools for Java (J2ME)
@@ -12,3 +13,8 @@
 hs_err_pid*
 
 .idea/
+=======
+.DS_Store
+.idea/
+
+>>>>>>> marwas_testmerge

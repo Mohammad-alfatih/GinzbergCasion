@@ -24,4 +24,8 @@ public class Card {
         System.out.print(getRank() + " of ");
         System.out.println(getSuit());
     }
+
+    public String toString(){
+        return this.rank + " " + this.suit;
+    }
 }
