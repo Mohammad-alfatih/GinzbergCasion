@@ -6,8 +6,9 @@ package ginzberg.casino.Roulette;
 public class Main {
 
     public static void main(String[] args) {
+        PlaceBet placeBet = new PlaceBet();
         Table table = new Table();
-        table.showTableWithHelp();
-        table.showTable();
+        System.out.println(placeBet.getBetType('N'));
+        System.out.println(table.getNumber(38));
     }
 }

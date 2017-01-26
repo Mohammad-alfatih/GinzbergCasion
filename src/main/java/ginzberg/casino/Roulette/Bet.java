@@ -7,11 +7,17 @@ import java.util.Map;
  * Created by rickjackson on 1/25/17.
  */
 public class Bet {
+    private Input in;
+    private Output out;
     private Map<Character, String> betTypes;
+    private String response;
 
     Bet() {
+        in = new Input();
+        out = new Output();
         betTypes = new HashMap<>();
         constructBetTypes();
+        response = "";
     }
 
     private void constructBetTypes() {
