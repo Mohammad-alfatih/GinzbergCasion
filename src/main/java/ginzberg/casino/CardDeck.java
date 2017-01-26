@@ -7,7 +7,7 @@ import java.util.Collections;
  * Created by williammattern on 1/24/17.
  */
 public class CardDeck {
-    private ArrayList<Card> cards = new ArrayList<Card>();
+    public ArrayList<Card> cards = new ArrayList<Card>();
 
     public CardDeck(){
         for (Suits s : Suits.values()){
