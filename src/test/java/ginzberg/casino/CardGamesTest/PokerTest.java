@@ -61,20 +61,28 @@ public class PokerTest {
             playerHand.put(i, deck.getNextCard());
         }
         boolean actual = pokerChecker.flushChecker(playerHand), expected = true;
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected,actual);
     }
 
     @Test
     public void straightChecker(){
         HashMap<Integer, Card> playerHand = loadPlayerHand(aceOfSpades,twoOfSpades,threeOfSpades,fourOfSpades,fiveOfSpades);
         boolean actual = pokerChecker.straightChecker(playerHand), expected = true;
-        Assert.assertEquals(actual,expected);
+        Assert.assertEquals(expected,actual);
     }
 
     @Test
     public void royalChecker(){
         HashMap<Integer, Card> playerHand = loadPlayerHand(tenOfSpades,jackOfSpades,queenOfSpades,kingOfSpades,aceOfSpades);
         boolean actual = pokerChecker.royalChecker(playerHand), expected = true;
-        Assert.assertEquals(actual,expected);
+        Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void royalCheckerFalse(){
+        HashMap<Integer, Card> playerHand = loadPlayerHand(fiveOfSpades,jackOfSpades,queenOfSpades,kingOfSpades,aceOfSpades);
+        boolean actual = pokerChecker.royalChecker(playerHand), expected = false;
+        Assert.assertEquals(expected,actual);
+    }
+
 }
