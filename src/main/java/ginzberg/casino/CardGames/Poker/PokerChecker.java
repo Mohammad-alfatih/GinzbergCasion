@@ -181,58 +181,6 @@ public class PokerChecker {
         } else {return false;}
     }
 
-    public boolean tensOrBetterChecker(HashMap<Integer, Card> hand){
-        int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        if(checkForTensOrBetterPairAroundPosition2(rankOrdinalArray) || checkForTensOrBetterPairAroundPosition4(rankOrdinalArray)){
-            return true;
-        } else {return false;}
-    }
-
-    public boolean fourAcesOrEightsChecker(HashMap<Integer, Card> hand){
-        int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        int countFromLeft = countOfMatchesFromLeft(rankOrdinalArray);
-        int countFromRight = countOfMatchesFromRight(rankOrdinalArray);
-        if((countFromLeft == 4 || countFromRight == 4) && (rankOrdinalArray[2] == 0 || rankOrdinalArray[2] == 7)){
-            return true;
-        } else {return false;}
-    }
-
-    public boolean fourSevensChecker(HashMap<Integer, Card> hand){
-        int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        int countFromLeft = countOfMatchesFromLeft(rankOrdinalArray);
-        int countFromRight = countOfMatchesFromRight(rankOrdinalArray);
-        if((countFromLeft == 4 || countFromRight == 4) && rankOrdinalArray[2] == 6){
-            return true;
-        } else {return false;}
-    }
-
-    public boolean fourAcesChecker(HashMap<Integer, Card> hand){
-        int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        int countFromLeft = countOfMatchesFromLeft(rankOrdinalArray);
-        int countFromRight = countOfMatchesFromRight(rankOrdinalArray);
-        if((countFromLeft == 4 || countFromRight == 4) && rankOrdinalArray[2] == 0 ){
-            return true;
-        } else {return false;}
-    }
-
-    public boolean fourTwoThroughFourChecker(HashMap<Integer, Card> hand){
-        int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        int countFromLeft = countOfMatchesFromLeft(rankOrdinalArray);
-        int countFromRight = countOfMatchesFromRight(rankOrdinalArray);
-        if((countFromLeft == 4 || countFromRight == 4) && (rankOrdinalArray[2] > 0 && rankOrdinalArray[2] < 4)){
-            return true;
-        } else {return false;}
-    }
-
-    public boolean fourFiveThroughKingChecker(HashMap<Integer, Card> hand){
-        int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        int countFromLeft = countOfMatchesFromLeft(rankOrdinalArray);
-        int countFromRight = countOfMatchesFromRight(rankOrdinalArray);
-        if((countFromLeft == 4 || countFromRight == 4) && rankOrdinalArray[2] > 3 ){
-            return true;
-        } else {return false;}
-    }
-
     public String getWinConditionThatIsMet(HashMap<Integer, Card> playerHand){
         if (flushChecker(playerHand) && straightChecker(playerHand) && royalChecker(playerHand)){
             return "royalFlush";
@@ -240,80 +188,6 @@ public class PokerChecker {
             return "straightFlush";
         } else if (fourOfAKindChecker(playerHand)){
             return "fourOfAKind";
-        } else if (fullHouseChecker(playerHand)) {
-            return "fullHouse";
-        } else if (flushChecker(playerHand)){
-            return "flush";
-        } else if (straightChecker(playerHand)){
-            return "straight";
-        } else if (tripsChecker(playerHand)){
-            return "threeOfAKind";
-        } else if (twoPairChecker(playerHand)){
-            return "twoPair";
-        } else if (jacksOrBetterChecker(playerHand)){
-            return "jacksOrBetter";
-        } else { return "lostHand";}
-    }
-
-    public String getWinConditionThatIsMetForTensOrBetter(HashMap<Integer, Card> playerHand){
-        if (flushChecker(playerHand) && straightChecker(playerHand) && royalChecker(playerHand)){
-            return "royalFlush";
-        } else if (flushChecker(playerHand) && straightChecker(playerHand) ){
-            return "straightFlush";
-        } else if (fourOfAKindChecker(playerHand)){
-            return "fourOfAKind";
-        } else if (fullHouseChecker(playerHand)) {
-            return "fullHouse";
-        } else if (flushChecker(playerHand)){
-            return "flush";
-        } else if (straightChecker(playerHand)){
-            return "straight";
-        } else if (tripsChecker(playerHand)){
-            return "threeOfAKind";
-        } else if (twoPairChecker(playerHand)){
-            return "twoPair";
-        } else if (tensOrBetterChecker(playerHand)){
-            return "tensOrBetter";
-        } else { return "lostHand";}
-    }
-
-    public String getWinConditionThatIsMetForAcesAndEights(HashMap<Integer, Card> playerHand){
-        if (flushChecker(playerHand) && straightChecker(playerHand) && royalChecker(playerHand)){
-            return "royalFlush";
-        } else if (fourAcesOrEightsChecker(playerHand)){
-            return "fourAcesOrEights";
-        } else if (flushChecker(playerHand) && straightChecker(playerHand) ){
-            return "straightFlush";
-        } else if (fourSevensChecker(playerHand)){
-            return "fourSevens";
-        } else if (fourOfAKindChecker(playerHand)){
-            return "fourOther";
-        } else if (fullHouseChecker(playerHand)) {
-            return "fullHouse";
-        } else if (flushChecker(playerHand)){
-            return "flush";
-        } else if (straightChecker(playerHand)){
-            return "straight";
-        } else if (tripsChecker(playerHand)){
-            return "threeOfAKind";
-        } else if (twoPairChecker(playerHand)){
-            return "twoPair";
-        } else if (tensOrBetterChecker(playerHand)){
-            return "tensOrBetter";
-        } else { return "lostHand";}
-    }
-
-    public String getWinConditionThatIsMetForDoubleBonus(HashMap<Integer, Card> playerHand){
-        if (flushChecker(playerHand) && straightChecker(playerHand) && royalChecker(playerHand)){
-            return "royalFlush";
-        } else if (fourAcesChecker(playerHand)){
-            return "fourAces";
-        } else if (fourTwoThroughFourChecker(playerHand)){
-            return "four2Through4";
-        } else if (fourFiveThroughKingChecker(playerHand)){
-            return "four5ThroughKing";
-        } else if (flushChecker(playerHand) && straightChecker(playerHand) ){
-            return "straightFlush";
         } else if (fullHouseChecker(playerHand)) {
             return "fullHouse";
         } else if (flushChecker(playerHand)){
