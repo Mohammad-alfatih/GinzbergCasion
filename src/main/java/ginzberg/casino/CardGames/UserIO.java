@@ -44,7 +44,7 @@ public class UserIO {
     }
 
     public void firstWelcome(){
-        images.showJoker();
+        images.showCasino();
         System.out.println("Welcome the Ginzberger Casino!\n" +
                 "What is your name?");
         this.getNameIO();

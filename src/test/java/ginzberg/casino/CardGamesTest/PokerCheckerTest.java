@@ -23,6 +23,7 @@ public class PokerCheckerTest {
     Card threeOfSpades = new Card(Ranks.THREE, Suits.SPADES);
     Card fourOfSpades = new Card(Ranks.FOUR, Suits.SPADES);
     Card fiveOfSpades = new Card(Ranks.FIVE, Suits.SPADES);
+    Card sixOfSpades = new Card(Ranks.SIX, Suits.SPADES);
     Card tenOfSpades = new Card(Ranks.TEN, Suits.SPADES);
     Card jackOfSpades = new Card(Ranks.JACK, Suits.SPADES);
     Card queenOfSpades = new Card(Ranks.QUEEN, Suits.SPADES);
@@ -223,4 +224,76 @@ public class PokerCheckerTest {
         boolean actual = pokerChecker.twoPairChecker(playerHand), expected = true;
         Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void jacksOrBetterChecker(){
+        HashMap<Integer, Card> playerHand = loadPlayerHand(aceOfSpades,aceOfDiamonds,twoOfDiamonds,fourOfSpades,fiveOfSpades);
+        boolean actual = pokerChecker.jacksOrBetterChecker(playerHand), expected = true;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void switchTestRoyalFlush() {
+        HashMap<Integer, Card> playerHand = loadPlayerHand(aceOfSpades,tenOfSpades,jackOfSpades,queenOfSpades,kingOfSpades);
+        String actual = pokerChecker.getWinConditionThatIsMet(playerHand), expected = "royalFlush";
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void switchTestStraightFlush() {
+        HashMap<Integer, Card> playerHand = loadPlayerHand(fiveOfSpades,threeOfSpades,fourOfSpades,sixOfSpades,twoOfSpades);
+        String actual = pokerChecker.getWinConditionThatIsMet(playerHand), expected = "straightFlush";
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void switchTestStraight() {
+        HashMap<Integer, Card> playerHand = loadPlayerHand(fiveOfSpades,threeOfSpades,fourOfSpades,aceOfDiamonds,twoOfSpades);
+        String actual = pokerChecker.getWinConditionThatIsMet(playerHand), expected = "straight";
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void switchTestFlush() {
+        HashMap<Integer, Card> playerHand = loadPlayerHand(fiveOfSpades,threeOfSpades,kingOfSpades,aceOfSpades,twoOfSpades);
+        String actual = pokerChecker.getWinConditionThatIsMet(playerHand), expected = "flush";
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void switchTestFourOfAKind() {
+        HashMap<Integer, Card> playerHand = loadPlayerHand(twoOfHearts,aceOfDiamonds,twoOfDiamonds,twoOfClubs,twoOfSpades);
+        String actual = pokerChecker.getWinConditionThatIsMet(playerHand), expected = "fourOfAKind";
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void switchTestFullHouse() {
+        HashMap<Integer, Card> playerHand = loadPlayerHand(twoOfHearts,aceOfDiamonds,twoOfDiamonds,aceOfSpades,twoOfSpades);
+        String actual = pokerChecker.getWinConditionThatIsMet(playerHand), expected = "fullHouse";
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void switchTestThreeOfAKind() {
+        HashMap<Integer, Card> playerHand = loadPlayerHand(twoOfHearts,kingOfClubs,twoOfDiamonds,aceOfSpades,twoOfSpades);
+        String actual = pokerChecker.getWinConditionThatIsMet(playerHand), expected = "threeOfAKind";
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void switchTestTwoPair() {
+        HashMap<Integer, Card> playerHand = loadPlayerHand(threeOfSpades,aceOfDiamonds,twoOfDiamonds,aceOfSpades,twoOfSpades);
+        String actual = pokerChecker.getWinConditionThatIsMet(playerHand), expected = "twoPair";
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void switchTestJacksOrBetter() {
+        HashMap<Integer, Card> playerHand = loadPlayerHand(aceOfSpades,aceOfDiamonds,twoOfDiamonds,fourOfSpades,fiveOfSpades);
+        String actual = pokerChecker.getWinConditionThatIsMet(playerHand), expected = "jacksOrBetter";
+        Assert.assertEquals(expected,actual);
+    }
+
+
 }
