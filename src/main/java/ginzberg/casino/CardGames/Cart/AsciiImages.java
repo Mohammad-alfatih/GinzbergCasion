@@ -9,8 +9,9 @@ import java.io.IOException;
  * Created by mkulima on 1/27/17.
  */
 public class AsciiImages {
+    DetermineFilePath determineFilePath = new DetermineFilePath();
     //String rootLoc = "//Users/anthonypajerowski/Casino/GinzbergCasion/src/main/java/ginzberg/casino/CardGames/Cart/";
-    String rootLoc = "/home/mkulima/dev/labs/GinzbergCasion/src/main/java/ginzberg/casino/CardGames/Cart/";
+    String rootLoc = determineFilePath.whereAmI()+"/src/main/java/ginzberg/casino/CardGames/Cart/";
     //String rootLoc = "/Users/williammattern/dev/GinzbergCasion/src/main/java/ginzberg/casino/CardGames/Cart/";
 
     public void showJoker() {
