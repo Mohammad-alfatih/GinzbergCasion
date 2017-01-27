@@ -7,7 +7,7 @@ public class Card {
     private Suits suit;
     private Ranks rank;
 
-    Card(Ranks rank, Suits suit){
+    public Card(Ranks rank, Suits suit){
         this.rank = rank;
         this.suit = suit;
     }
