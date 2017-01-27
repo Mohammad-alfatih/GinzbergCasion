@@ -85,4 +85,11 @@ public class PokerTest {
         Assert.assertEquals(expected,actual);
     }
 
+    @Test
+    public void convertToRankOrdinalArrayTest(){
+        HashMap<Integer, Card> playerHand = loadPlayerHand(fiveOfSpades,jackOfSpades,queenOfSpades,kingOfSpades,aceOfSpades);
+        int[] actual = pokerChecker.convertToRankOrdinalArray(playerHand), expected = {4,10,11,12,0};
+        Assert.assertArrayEquals(expected,actual);
+    }
+
 }
