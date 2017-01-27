@@ -10,7 +10,7 @@ public class UserIO {
     // Should these be static?
     protected static double userBalance = 100.0;
     public static String userName;
-    protected Scanner userInput = new Scanner(System.in);
+    public Scanner userInput = new Scanner(System.in);
     protected boolean playAgain = true;
  //   protected int currentBet;
 
@@ -47,7 +47,7 @@ public class UserIO {
     }
 
     public void welcome() {
-        System.out.println("Welcome the Ginzberger Casion!\n" +
+        System.out.println("Welcome the Ginzberger Casino!\n" +
                 "What is your name?");
         this.getNameIO();
         System.out.println("Cool, " + this.userName + ". Here's $100. Good luck!");
@@ -94,12 +94,9 @@ public class UserIO {
         return answer;
     }
 
-
-
-
-
-
-
-
-
+    public void setPlayAgain(String playAgain) {
+        if (playAgain.equalsIgnoreCase("N")){
+            this.playAgain = false;
+        }
+    }
 }
