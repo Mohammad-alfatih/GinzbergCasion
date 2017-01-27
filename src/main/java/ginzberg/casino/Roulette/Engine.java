@@ -140,7 +140,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on Column " + number + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setStraightUp(number, amount);
+                placeBet.setColumn(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -164,7 +164,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on " + holder + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setStraightUp(number, amount);
+                placeBet.setDozen(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -185,7 +185,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on " + holder + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setStraightUp(number, amount);
+                placeBet.setRedBlack(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -206,7 +206,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on " + holder + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setStraightUp(number, amount);
+                placeBet.setHighLow(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -227,7 +227,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on " + holder + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setStraightUp(number, amount);
+                placeBet.setEvenOdd(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -238,7 +238,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on Split Right " + number + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setStraightUp(number, amount);
+                placeBet.setSplitRight(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -249,7 +249,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on Split Down " + number + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setStraightUp(number, amount);
+                placeBet.setSplitDown(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -260,7 +260,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on Street " + number + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setStraightUp(number, amount);
+                placeBet.setSplitDown(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -271,7 +271,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on Corner " + number + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setStraightUp(number, amount);
+                placeBet.setCorner(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -282,7 +282,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on Topline " + number + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setStraightUp(number, amount);
+                placeBet.setTopline(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -293,7 +293,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on Line " + number + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setStraightUp(number, amount);
+                placeBet.setLine(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -304,7 +304,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on 0/00 Split " + number + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setStraightUp(number, amount);
+                placeBet.setZeroDoubleZero(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -315,7 +315,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on Courtesy Wager " + number + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setStraightUp(number, amount);
+                placeBet.setCourtesy(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;

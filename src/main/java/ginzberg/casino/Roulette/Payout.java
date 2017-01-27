@@ -83,10 +83,10 @@ public class Payout extends PlaceBet {
 
             if (next.equals(winningNumber)) {
                 int bet = map.get(next);
-                payout *= bet;
+                bet *= payouts.get(betType);
 
-                if (payout != 0) {
-                    System.out.println("Paying out $" + payout + " on " + getBetType(betType) + " " + winningNumber + "\n");
+                if (bet != 0) {
+                    System.out.println("Paying out $" + bet + " on " + getBetType(betType) + " " + payout + "\n");
                 }
                 map.replace(next, 0);
             }
@@ -104,7 +104,10 @@ public class Payout extends PlaceBet {
             if (next.equals(Integer.toString(winningNumber))) {
                 int bet = super.straightUp.get(next);
                 bet *= 35;
-                System.out.println("Payout out $" + bet + " on Straight Up " + winningNumber + "\n");
+
+                if (bet != 0) {
+                    System.out.println("Payout out $" + bet + " on Straight Up " + winningNumber + "\n");
+                }
                 super.straightUp.replace(next, 0);
             }
         }
