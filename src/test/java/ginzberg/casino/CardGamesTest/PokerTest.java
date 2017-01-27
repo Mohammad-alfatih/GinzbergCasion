@@ -27,6 +27,9 @@ public class PokerTest {
     Card jackOfSpades = new Card(Ranks.JACK, Suits.SPADES);
     Card queenOfSpades = new Card(Ranks.QUEEN, Suits.SPADES);
     Card kingOfSpades = new Card(Ranks.KING, Suits.SPADES);
+    Card twoOfDiamonds = new Card(Ranks.TWO, Suits.DIAMONDS);
+    Card twoOfClubs = new Card(Ranks.TWO, Suits.CLUBS);
+    Card twoOfHearts = new Card(Ranks.TWO, Suits.HEARTS);
 
 
     public HashMap<Integer, Card> loadPlayerHand(Card cardOne, Card cardTwo, Card cardThree, Card cardFour, Card cardFive){
@@ -90,6 +93,20 @@ public class PokerTest {
         HashMap<Integer, Card> playerHand = loadPlayerHand(fiveOfSpades,jackOfSpades,queenOfSpades,kingOfSpades,aceOfSpades);
         int[] actual = pokerChecker.convertToRankOrdinalArray(playerHand), expected = {4,10,11,12,0};
         Assert.assertArrayEquals(expected,actual);
+    }
+
+    @Test
+    public void fourOfAKindCheckerTest(){
+        HashMap<Integer, Card> playerHand = loadPlayerHand(twoOfClubs,fiveOfSpades,twoOfDiamonds,twoOfHearts,twoOfSpades);
+        boolean actual = pokerChecker.fourOfAKindChecker(playerHand), expected = true;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void fourOfAKindCheckerTestFalse(){
+        HashMap<Integer, Card> playerHand = loadPlayerHand(threeOfSpades,fiveOfSpades,twoOfDiamonds,twoOfHearts,twoOfSpades);
+        boolean actual = pokerChecker.fourOfAKindChecker(playerHand), expected = false;
+        Assert.assertEquals(expected,actual);
     }
 
 }
