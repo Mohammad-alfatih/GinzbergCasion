@@ -54,6 +54,7 @@ public class PokerChecker {
         for (int i = 0; i < 5; i++){
             rankOrdinalArray[i] = hand.get(i).getRank().ordinal();
         }
+        Arrays.sort(rankOrdinalArray);
         return rankOrdinalArray;
     }
 
@@ -109,7 +110,6 @@ public class PokerChecker {
 
     public boolean tripsChecker(HashMap<Integer, Card> hand){
         int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        Arrays.sort(rankOrdinalArray);
         int countFromLeft, countFromRight, countFromPosition2;
         countFromLeft = countOfMatchesFromLeft(rankOrdinalArray);
         countFromRight = countOfMatchesFromRight(rankOrdinalArray);
@@ -170,7 +170,6 @@ public class PokerChecker {
 
     public boolean twoPairChecker(HashMap<Integer, Card> hand){
         int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        Arrays.sort(rankOrdinalArray);
         if(checkForPairAroundPosition2(rankOrdinalArray) && checkForPairAroundPosition4(rankOrdinalArray)){
             return true;
         } else {return false;}
@@ -178,7 +177,6 @@ public class PokerChecker {
 
     public boolean jacksOrBetterChecker(HashMap<Integer, Card> hand){
         int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        Arrays.sort(rankOrdinalArray);
         if(checkForJacksOrBetterPairAroundPosition2(rankOrdinalArray) || checkForJacksOrBetterPairAroundPosition4(rankOrdinalArray)){
             return true;
         } else {return false;}
@@ -186,7 +184,6 @@ public class PokerChecker {
 
     public boolean tensOrBetterChecker(HashMap<Integer, Card> hand){
         int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        Arrays.sort(rankOrdinalArray);
         if(checkForTensOrBetterPairAroundPosition2(rankOrdinalArray) || checkForTensOrBetterPairAroundPosition4(rankOrdinalArray)){
             return true;
         } else {return false;}
@@ -194,7 +191,6 @@ public class PokerChecker {
 
     public boolean fourAcesOrEightsChecker(HashMap<Integer, Card> hand){
         int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        Arrays.sort(rankOrdinalArray);
         int countFromLeft = countOfMatchesFromLeft(rankOrdinalArray);
         int countFromRight = countOfMatchesFromRight(rankOrdinalArray);
         if((countFromLeft == 4 || countFromRight == 4) && (rankOrdinalArray[2] == 0 || rankOrdinalArray[2] == 7)){
@@ -204,7 +200,6 @@ public class PokerChecker {
 
     public boolean fourSevensChecker(HashMap<Integer, Card> hand){
         int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        Arrays.sort(rankOrdinalArray);
         int countFromLeft = countOfMatchesFromLeft(rankOrdinalArray);
         int countFromRight = countOfMatchesFromRight(rankOrdinalArray);
         if((countFromLeft == 4 || countFromRight == 4) && rankOrdinalArray[2] == 6){
@@ -214,7 +209,6 @@ public class PokerChecker {
 
     public boolean fourAcesChecker(HashMap<Integer, Card> hand){
         int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        Arrays.sort(rankOrdinalArray);
         int countFromLeft = countOfMatchesFromLeft(rankOrdinalArray);
         int countFromRight = countOfMatchesFromRight(rankOrdinalArray);
         if((countFromLeft == 4 || countFromRight == 4) && rankOrdinalArray[2] == 0 ){
@@ -224,7 +218,6 @@ public class PokerChecker {
 
     public boolean fourTwoThroughFourChecker(HashMap<Integer, Card> hand){
         int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        Arrays.sort(rankOrdinalArray);
         int countFromLeft = countOfMatchesFromLeft(rankOrdinalArray);
         int countFromRight = countOfMatchesFromRight(rankOrdinalArray);
         if((countFromLeft == 4 || countFromRight == 4) && (rankOrdinalArray[2] > 0 && rankOrdinalArray[2] < 4)){
@@ -234,7 +227,6 @@ public class PokerChecker {
 
     public boolean fourFiveThroughKingChecker(HashMap<Integer, Card> hand){
         int[] rankOrdinalArray = convertToRankOrdinalArray(hand);
-        Arrays.sort(rankOrdinalArray);
         int countFromLeft = countOfMatchesFromLeft(rankOrdinalArray);
         int countFromRight = countOfMatchesFromRight(rankOrdinalArray);
         if((countFromLeft == 4 || countFromRight == 4) && rankOrdinalArray[2] > 3 ){
