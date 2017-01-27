@@ -13,6 +13,7 @@ public class UserIO {
     protected Scanner userInput = new Scanner(System.in);
     protected boolean playAgain = true;
  //   protected int currentBet;
+    //AsciiImages images = new AsciiImages();
 
     public UserIO(double aBalance, String aName) {
         this.userBalance = aBalance;
@@ -43,10 +44,13 @@ public class UserIO {
     }
 
     public void getNameIO() {
+        //System.out.println(images.greeting());
         userName = userInput.next();
     }
 
     public void welcome() {
+        //System.out.println(images.wall());
+
         System.out.println("Welcome the Ginzberger Casion!\n" +
                 "What is your name?");
         this.getNameIO();
