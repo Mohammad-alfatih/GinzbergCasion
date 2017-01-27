@@ -6,8 +6,7 @@ package ginzberg.casino.Roulette;
 public class Main {
 
     public static void main(String[] args) {
-        Table table = new Table();
-        table.showTableWithHelp();
-        table.showTable();
+        Engine engine = new Engine();
+        engine.run();
     }
 }

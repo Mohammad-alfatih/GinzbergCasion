@@ -19,7 +19,7 @@ public class BetTest {
     public void getBetTypeTest() {
 
         String expected = "Straight Up";
-        String actual = bet.getBetType('A');
+        String actual = bet.getBetType("A");
         System.out.println("Expected : " + expected);
         System.out.println("Actual   : " + actual);
         assertEquals("I expect the result to be: Straight Up", expected, actual);

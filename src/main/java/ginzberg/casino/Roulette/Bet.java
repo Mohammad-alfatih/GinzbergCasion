@@ -7,30 +7,37 @@ import java.util.Map;
  * Created by rickjackson on 1/25/17.
  */
 public class Bet {
-    private Map<Character, String> betTypes;
+    private Input in;
+    private Output out;
+    private Map<String, String> betTypes;
+    private String response;
 
     Bet() {
+        in = new Input();
+        out = new Output();
         betTypes = new HashMap<>();
         constructBetTypes();
+        response = "";
     }
 
     private void constructBetTypes() {
-        betTypes.put('A', "Straight Up");
-        betTypes.put('B', "Column");
-        betTypes.put('C', "Any Dozen");
-        betTypes.put('D', "Red or Black");
-        betTypes.put('E', "1-18 or 19-36");
-        betTypes.put('F', "Even or Odd");
-        betTypes.put('G', "Split Bet");
-        betTypes.put('H', "Street");
-        betTypes.put('I', "Corner");
-        betTypes.put('J', "Topline");
-        betTypes.put('K', "Line");
-        betTypes.put('L', "0/00 Split");
-        betTypes.put('M', "Courtesy Wager");
+        betTypes.put("A", "Straight Up");
+        betTypes.put("B", "Column");
+        betTypes.put("C", "Any Dozen");
+        betTypes.put("D", "Red or Black");
+        betTypes.put("E", "1-18 or 19-36");
+        betTypes.put("F", "Even or Odd");
+        betTypes.put("GR", "Split Bet Right");
+        betTypes.put("GD", "Split Bet Down");
+        betTypes.put("H", "Street");
+        betTypes.put("I", "Corner");
+        betTypes.put("J", "Topline");
+        betTypes.put("K", "Line");
+        betTypes.put("L", "0/00 Split");
+        betTypes.put("M", "Courtesy Wager");
     }
 
-    String getBetType(Character key) {
+    String getBetType(String key) {
         return betTypes.get(key);
     }
 
@@ -239,5 +246,19 @@ public class Bet {
         } else {
             return 0;
         }
+    }
+
+    public String validateBetType(String input) {
+        input = input.toUpperCase();
+
+        if (betTypes.containsKey(input)) {
+            input = "GET BET TYPE";
+        } else if (input.equals("G")) {
+            out.casinoOutput("Did you want a split to the right or down? (GR or GD)");
+            input = "CHOOSE BET TYPE";
+        } else {
+            input = "CHOOSE BET TYPE";
+        }
+        return input;
     }
 }
