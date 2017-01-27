@@ -13,4 +13,23 @@ public class CardDeckTest {
         CardDeck cardDeck = new CardDeck();
         cardDeck.seeFullDeck();
     }
+
+    @Test
+    public void getNextCardTest() {
+        CardDeck cardDeck = new CardDeck();
+        cardDeck.shuffle();
+        Card thisCard;
+        thisCard = cardDeck.getNextCard();
+        thisCard.seeCard();
+        thisCard = cardDeck.getNextCard();
+        thisCard.seeCard();
+        thisCard = cardDeck.getNextCard();
+        thisCard.seeCard();
+        thisCard = cardDeck.getNextCard();
+        thisCard.seeCard();
+        thisCard = cardDeck.getNextCard();
+        thisCard.seeCard();
+
+
+    }
 }
