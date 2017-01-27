@@ -98,7 +98,7 @@ public class PlaceBet extends Bet {
     }
 
     public void setHighLow(Integer key, Integer money) {
-        highLow.replace(key, money);
+        highLow.put(key, money);
     }
 
     public Integer getEvenOdd(Integer key) {

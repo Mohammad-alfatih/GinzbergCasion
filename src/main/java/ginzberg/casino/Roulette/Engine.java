@@ -371,11 +371,19 @@ public class Engine {
 
             case "PAYOUT ALL WINNING BETS":
                 winnings = 0;
-                out.casinoOutput("Winnings: $" + winnings);
-                winnings += payout.payoutWinningHalfBet(winningNumber, "E");
-                out.casinoOutput("$" + winnings);
-
-
+                winnings += payout.payoutHalfBet(winningNumber, "E");
+                winnings += payout.payoutEvenOddBet(winningNumber, "F");
+                winnings += payout.payoutRedBlackBet(winningNumber, "D");
+                winnings += payout.payoutDozenBet(winningNumber, "C");
+                winnings += payout.payoutColumnBet(winningNumber, "B");
+                winnings += payout.payoutLineBet(winningNumber, "K");
+                winnings += payout.payoutToplineBet(winningNumber, "J");
+                winnings += payout.payoutCornerBet(winningNumber, "I");
+                winnings += payout.payoutStreetBet(winningNumber, "H");
+                winnings += payout.payoutCourtesyBet(winningNumber, "M");
+                winnings += payout.payoutZeroDoubleZero(winningNumber, "L");
+                winnings += payout.payoutSplitRight(winningNumber, "GR");
+                winnings += payout.payoutSplitDownBet(winningNumber, "GD");
                 winnings += payout.payoutWinningStraightUp(winningNumber);
                 result = "CONGRATULATE PLAYER";
 
