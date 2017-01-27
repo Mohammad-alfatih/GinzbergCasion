@@ -19,14 +19,14 @@ public class PokerCardHandler {
 
     HashMap<Integer, Card> playerHand = new HashMap<>(sizeOfHand);
     {
-        for ( int i = 1; i <= sizeOfHand; i++) {
+        for ( int i = 0; i < sizeOfHand; i++) {
             playerHand.put(i, deck.getNextCard());
         }
     }
 
     HashMap<Integer, Boolean> cardsToReplace = new HashMap<>();
     {
-        for ( int i = 1; i <= sizeOfHand; i++) {
+        for ( int i = 0; i < sizeOfHand; i++) {
             cardsToReplace.put(i, false);
         }
     }
@@ -37,7 +37,7 @@ public class PokerCardHandler {
 
     public String showHand() {
         String hand= "";
-        for (int i = 1; i <= sizeOfHand; i++) {     // SEE HAND in controller?
+        for (int i = 0; i < sizeOfHand; i++) {     // SEE HAND in controller?
             hand += "Card " + i + ": " + playerHand.get(i).getRank() + " of " +
                     playerHand.get(i).getSuit() + "\n";
         }
@@ -46,12 +46,12 @@ public class PokerCardHandler {
 
     void setCardsToReplace(int[] cardNumber) {
         for (int i = 0; i < cardNumber.length; i++) {
-            cardsToReplace.replace(cardNumber[i], false, true);
+            cardsToReplace.put(cardNumber[i], true);
         }
     }
 
     public void replaceCards() {
-        for (int i = 1; i <= playerHand.size(); i++) {
+        for (int i = 0; i < playerHand.size(); i++) {
 
             if (cardsToReplace.get(i)) {
                 playerHand.remove(i);
