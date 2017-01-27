@@ -61,18 +61,33 @@ public class Payout extends PlaceBet {
     public void clearAllLosingBets(int winningNumber) {
     }
 
-    public void clearLosingBets(int winningNumber, Map map) {
-        Set<Integer> set = createSet(map);
-        Iterator<Integer> itr = createIterator(set);
+    public void clearLosingHighLowBets(int winningNumber) {
+        Set<Integer> set = highLow.keySet();
+        Iterator<Integer> itr = set.iterator();
+        int win = Bet.getWinningHalfBet(winningNumber);
 
         while (itr.hasNext()) {
             Integer next = itr.next();
 
-            if (!next.equals(winningNumber)) {
-                map.replace(next, 0);
+            if (next != win) {
+                super.highLow.put(next, 0);
             }
         }
     }
+
+//    public void clearLosingBets(int winningNumber, Map map) {
+//        Set<Integer> set = createSet(map);
+//        Iterator<Integer> itr = createIterator(set);
+//        int win = Bet.getWinningHalfBet(winningNumber);
+//
+//        while (itr.hasNext()) {
+//            Integer next = itr.next();
+//
+//            if (next != win) {
+//                map.put(next, 0);
+//            }
+//        }
+//    }
 
 //    public Integer payoutWinningBets(int winPayout, Map<Integer, Integer> betMap, int betPayout, String betType) {
 //        Set<Integer> set = createSet(betMap);
@@ -133,8 +148,8 @@ public class Payout extends PlaceBet {
             int compPayout = super.getWinningHalfBet(next);
             System.out.println("compPayout: " + compPayout);
 
-            if (winPayout == compPayout) {
-                int bet = super.highLow.get(next);
+            if (winPayout == next) {
+                int bet = super.getHighLow(next);
                 System.out.println("bet: " + bet);
                 int thisPOamount = payouts.get(betType);
                 System.out.println("thisPOamount: " + thisPOamount);
@@ -142,7 +157,7 @@ public class Payout extends PlaceBet {
                 System.out.println("thisPayout: " + thisPayout);
                 payout += thisPayout;
                 System.out.println("payout: " + payout);
-                super.highLow.replace(next, 0);
+                super.highLow.put(next, 0);
                 System.out.println("updated bet: " + super.highLow.get(next));
             }
         }

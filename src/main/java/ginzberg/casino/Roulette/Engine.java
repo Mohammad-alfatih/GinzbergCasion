@@ -206,7 +206,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on " + holder + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.highLow.replace(Integer.valueOf(number), amount);
+                payout.setHighLow(Integer.parseInt(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -260,7 +260,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on Street " + number + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setSplitDown(Integer.valueOf(number), amount);
+                placeBet.setStreet(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -347,20 +347,20 @@ public class Engine {
                 break;
 
             case "CLEAR ALL LOSING BETS":
-                payout.clearLosingStraightUp(winningNumber);
-                payout.clearLosingBets(winningNumber, placeBet.column);
-                payout.clearLosingBets(winningNumber, placeBet.dozen);
-                payout.clearLosingBets(winningNumber, placeBet.redBlack);
-                payout.clearLosingBets(winningNumber, placeBet.highLow);
-                payout.clearLosingBets(winningNumber, placeBet.evenOdd);
-                payout.clearLosingBets(winningNumber, placeBet.splitDown);
-                payout.clearLosingBets(winningNumber, placeBet.splitRight);
-                payout.clearLosingBets(winningNumber, placeBet.street);
-                payout.clearLosingBets(winningNumber, placeBet.corner);
-                payout.clearLosingBets(winningNumber, placeBet.topline);
-                payout.clearLosingBets(winningNumber, placeBet.line);
-                payout.clearLosingBets(winningNumber, placeBet.zeroDoubleZero);
-                payout.clearLosingBets(winningNumber, placeBet.courtesy);
+//                payout.clearLosingStraightUp(winningNumber);
+//                payout.clearLosingBets(winningNumber, placeBet.column);
+//                payout.clearLosingBets(winningNumber, placeBet.dozen);
+//                payout.clearLosingBets(winningNumber, placeBet.redBlack);
+                payout.clearLosingHighLowBets(winningNumber);
+//                payout.clearLosingBets(winningNumber, placeBet.evenOdd);
+//                payout.clearLosingBets(winningNumber, placeBet.splitDown);
+//                payout.clearLosingBets(winningNumber, placeBet.splitRight);
+//                payout.clearLosingBets(winningNumber, placeBet.street);
+//                payout.clearLosingBets(winningNumber, placeBet.corner);
+//                payout.clearLosingBets(winningNumber, placeBet.topline);
+//                payout.clearLosingBets(winningNumber, placeBet.line);
+//                payout.clearLosingBets(winningNumber, placeBet.zeroDoubleZero);
+//                payout.clearLosingBets(winningNumber, placeBet.courtesy);
                 result = "APPOLOGIZE TO PLAYER";
                 break;
 
