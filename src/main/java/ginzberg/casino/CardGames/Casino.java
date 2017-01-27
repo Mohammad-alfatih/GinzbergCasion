@@ -47,7 +47,7 @@ public class Casino {
     }
 
     public void startGame2(UserIO aUI) {
-
+        selection = aUI.gameUserWantsToPlay();
         if (this.selection.equalsIgnoreCase("1")) {
             this.playBJ(aUI);
         } else if (this.selection.equalsIgnoreCase("2")){
@@ -55,6 +55,7 @@ public class Casino {
         } else if (this.selection.equalsIgnoreCase("3")) {
             this.playWar(aUI);
         }
+
     }
 
     public void play(UserIO anIO, int playCounter) {

@@ -17,7 +17,6 @@ public class Main {
             init.play(initIO, counter);
             initIO.additionalWelcome();
             counter++;
-
         }
     }
 }

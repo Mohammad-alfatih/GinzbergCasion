@@ -183,6 +183,6 @@ public class PokerChecker {
             return "twoPair";
         } else if (jacksOrBetterChecker(playerHand)){
             return "jacksOrBetter";
-        } else { return "lostHand";}
+        } else {return "lostHand";}
     }
 }
