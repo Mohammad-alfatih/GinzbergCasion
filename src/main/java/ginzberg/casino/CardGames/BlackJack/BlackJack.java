@@ -18,7 +18,7 @@ public class BlackJack extends CardGame {
     int currentBet;
 
 
-    public void initializeBJD() {
+    public void initializeBlackJackDeck() {
         cardDeck.shuffle();
     }
 
@@ -72,7 +72,6 @@ public class BlackJack extends CardGame {
         aUI.displayTurn(hand);
         return hand;
     }
-
 
     public int calculateScore(ArrayList<Card> aHand) {
         int allAces = findAllAces(aHand);
@@ -170,15 +169,12 @@ public class BlackJack extends CardGame {
         }
     }
 
-
-
     public double payOut(UserIO aUI, double aPayOut) {
         double total;
         total = aUI.getUserBalance() + aPayOut;
         aUI.setUserBalance(total);
         return total;
     }
-
 
     public String compareFirstDrawScores(UserIO aUI) {
         String answer = "";
@@ -250,7 +246,7 @@ public class BlackJack extends CardGame {
 
     public void playRound(UserIO aUI){
         currentBet=aUI.askForBet();
-        initializeBJD();
+        initializeBlackJackDeck();
         dealCards();
         showCards(aUI);
 
