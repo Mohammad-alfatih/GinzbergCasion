@@ -23,6 +23,11 @@ public class PokerTest {
     Card threeOfSpades = new Card(Ranks.THREE, Suits.SPADES);
     Card fourOfSpades = new Card(Ranks.FOUR, Suits.SPADES);
     Card fiveOfSpades = new Card(Ranks.FIVE, Suits.SPADES);
+    Card tenOfSpades = new Card(Ranks.TEN, Suits.SPADES);
+    Card jackOfSpades = new Card(Ranks.JACK, Suits.SPADES);
+    Card queenOfSpades = new Card(Ranks.QUEEN, Suits.SPADES);
+    Card kingOfSpades = new Card(Ranks.KING, Suits.SPADES);
+
 
     public HashMap<Integer, Card> loadPlayerHand(Card cardOne, Card cardTwo, Card cardThree, Card cardFour, Card cardFive){
         CardDeck deck = new CardDeck();
@@ -63,6 +68,13 @@ public class PokerTest {
     public void straightChecker(){
         HashMap<Integer, Card> playerHand = loadPlayerHand(aceOfSpades,twoOfSpades,threeOfSpades,fourOfSpades,fiveOfSpades);
         boolean actual = pokerChecker.straightChecker(playerHand), expected = true;
+        Assert.assertEquals(actual,expected);
+    }
+
+    @Test
+    public void royalChecker(){
+        HashMap<Integer, Card> playerHand = loadPlayerHand(tenOfSpades,jackOfSpades,queenOfSpades,kingOfSpades,aceOfSpades);
+        boolean actual = pokerChecker.royalChecker(playerHand), expected = true;
         Assert.assertEquals(actual,expected);
     }
 }
