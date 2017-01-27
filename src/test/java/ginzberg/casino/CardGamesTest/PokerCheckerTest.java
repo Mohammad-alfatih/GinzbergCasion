@@ -15,7 +15,7 @@ import java.util.HashMap;
 /**
  * Created by williammattern on 1/26/17.
  */
-public class PokerTest {
+public class PokerCheckerTest {
 
     PokerChecker pokerChecker = new PokerChecker();
     Card aceOfSpades = new Card(Ranks.ACE, Suits.SPADES);
@@ -32,6 +32,7 @@ public class PokerTest {
     Card twoOfHearts = new Card(Ranks.TWO, Suits.HEARTS);
     Card kingOfHearts = new Card(Ranks.KING, Suits.HEARTS);
     Card kingOfClubs = new Card(Ranks.KING, Suits.CLUBS);
+    Card aceOfDiamonds = new Card(Ranks.ACE, Suits.DIAMONDS);
 
 
     public HashMap<Integer, Card> loadPlayerHand(Card cardOne, Card cardTwo, Card cardThree, Card cardFour, Card cardFive){
@@ -216,5 +217,10 @@ public class PokerTest {
         Assert.assertEquals(expected,actual);
     }
 
-
+    @Test
+    public void twoPairChecker(){
+        HashMap<Integer, Card> playerHand = loadPlayerHand(threeOfSpades,aceOfDiamonds,twoOfDiamonds,aceOfSpades,twoOfSpades);
+        boolean actual = pokerChecker.twoPairChecker(playerHand), expected = true;
+        Assert.assertEquals(expected,actual);
+    }
 }
