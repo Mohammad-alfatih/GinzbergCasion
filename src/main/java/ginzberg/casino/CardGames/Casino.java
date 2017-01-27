@@ -53,7 +53,6 @@ public class Casino {
 
 
     public void play(UserIO anIO) {
-        anIO.welcome();
         startGame(anIO);
     }
 

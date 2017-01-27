@@ -50,12 +50,17 @@ public class UserIO {
         userName = userInput.next();
     }
 
-    public void welcome(){
+    public void firstWelcome(){
         images.showJoker();
         System.out.println("Welcome the Ginzberger Casino!\n" +
                 "What is your name?");
         this.getNameIO();
         System.out.println("Cool, " + this.userName + ". Here's $100. Good luck!");
+    }
+
+    public void additionalWelcome() {
+        images.showJoker();
+        System.out.println("additional welcome");
     }
 
     // Takes in a String (User Input), and starts a game based on said String
