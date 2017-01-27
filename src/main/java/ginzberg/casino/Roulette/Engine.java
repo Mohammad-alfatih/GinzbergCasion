@@ -1,6 +1,6 @@
 package ginzberg.casino.Roulette;
 
-import ginzberg.casino.Games.UserIO;
+import ginzberg.casino.CardGames.UserIO;
 
 /**
  * Created by rickjackson on 1/25/17.
