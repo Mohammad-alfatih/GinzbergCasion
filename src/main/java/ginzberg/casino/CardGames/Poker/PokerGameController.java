@@ -26,11 +26,6 @@ public class PokerGameController {
 
     public void playPoker() {
 
-
-
-//           //pokerPlayer.displayTurn("What game would you like to play? \n Enter '1' for 'Jacks or better" +
-//           //         "\n Enter '2' for 'Tens or Better'\n Enter '3' for 'Aces and Eights'\n Enter '4' for 'Double Bonus'");
-//            payout.setGamePayoutOdds(gameType.get(pokerPlayer.userInput.nextInt()));
             pokerCards = new PokerCardHandler();
             pokerCards.dealHand();
             pokerPlayer.displayUserBalance();
