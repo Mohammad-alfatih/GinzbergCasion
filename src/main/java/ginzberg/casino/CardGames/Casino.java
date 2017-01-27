@@ -14,27 +14,27 @@ public class Casino {
 
     public void playBJ(UserIO aUI) {
 
-        while (aUI.playAgain == true) {
+        //if (aUI.playAgain) {
             BlackJack newBJ = new BlackJack();
             newBJ.playRound(aUI);
             aUI.setPlayAgain(aUI.anotherRound());
-        }
+        //}
     }
 
     public void playWar(UserIO aUI) {
-        while(aUI.playAgain == true) {
+        //if (aUI.playAgain) {
             Casino_Wars newCW = new Casino_Wars();
             newCW.playRound(aUI);
             aUI.setPlayAgain(aUI.anotherRound());
-        }
+        //}
     }
 
     public void playPoker(UserIO aUI){
-        while(aUI.playAgain){
+        //if (aUI.playAgain){
             PokerGameController pokerGameController = new PokerGameController();
             pokerGameController.playPoker();
             aUI.setPlayAgain(aUI.anotherRound());
-        }
+        //}
     }
 
 

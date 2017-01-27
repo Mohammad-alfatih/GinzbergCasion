@@ -5,13 +5,19 @@ package ginzberg.casino.CardGames;
  */
 public class Main {
     static boolean inCasino = true;
+    static Casino init;
+    static UserIO initIO;
+
     public static void main(String[] args) {
-        Casino init = new Casino();
-        UserIO initIO = new UserIO();
+        init = new Casino();
+        initIO = new UserIO();
         initIO.firstWelcome();
+
         while(inCasino) {
+
             init.play(initIO);
             initIO.additionalWelcome();
+
         }
     }
 }
