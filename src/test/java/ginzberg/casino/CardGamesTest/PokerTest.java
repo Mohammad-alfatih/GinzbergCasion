@@ -160,5 +160,17 @@ public class PokerTest {
         Assert.assertEquals(expected,actual);
     }
 
+    @Test
+    public void checkForPairAroundPosition2(){
+        int[] ordinals = {2,9,9,10,10};
+        boolean actual = pokerChecker.checkForPairAroundPosition2(ordinals), expected = true;
+        Assert.assertEquals(expected,actual);
+    }
 
+    @Test
+    public void checkForPairAroundPosition2False(){
+        int[] ordinals = {2,8,9,10,10};
+        boolean actual = pokerChecker.checkForPairAroundPosition2(ordinals), expected = false;
+        Assert.assertEquals(expected,actual);
+    }
 }

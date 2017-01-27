@@ -95,7 +95,7 @@ public class Casino_Wars extends CardGame {
 
     public void playRound(UserIO aUI) {
          currentBet = aUI.askForBet();
-         initializeCW();
+         initializeCasinoWars();
          dealCards();
          if (!isNotWar()) {
              displayWinner(aUI);
@@ -127,7 +127,7 @@ public class Casino_Wars extends CardGame {
         return currentBet;
     }
 
-    public void initializeCW() {
+    public void initializeCasinoWars() {
         cardDeck.shuffle();
     }
 
