@@ -30,6 +30,8 @@ public class PokerTest {
     Card twoOfDiamonds = new Card(Ranks.TWO, Suits.DIAMONDS);
     Card twoOfClubs = new Card(Ranks.TWO, Suits.CLUBS);
     Card twoOfHearts = new Card(Ranks.TWO, Suits.HEARTS);
+    Card kingOfHearts = new Card(Ranks.KING, Suits.HEARTS);
+    Card kingOfClubs = new Card(Ranks.KING, Suits.CLUBS);
 
 
     public HashMap<Integer, Card> loadPlayerHand(Card cardOne, Card cardTwo, Card cardThree, Card cardFour, Card cardFive){
@@ -91,7 +93,7 @@ public class PokerTest {
     @Test
     public void convertToRankOrdinalArrayTest(){
         HashMap<Integer, Card> playerHand = loadPlayerHand(fiveOfSpades,jackOfSpades,queenOfSpades,kingOfSpades,aceOfSpades);
-        int[] actual = pokerChecker.convertToRankOrdinalArray(playerHand), expected = {4,10,11,12,0};
+        int[] actual = pokerChecker.convertToRankOrdinalArray(playerHand), expected = {0,4,10,11,12};
         Assert.assertArrayEquals(expected,actual);
     }
 
@@ -109,4 +111,38 @@ public class PokerTest {
         Assert.assertEquals(expected,actual);
     }
 
+    @Test
+    public void countOfMatchesFromLeftChecker(){
+        int[] ordinals = {0,0,0,1,1};
+        int actual = pokerChecker.countOfMatchesFromLeft(ordinals), expected = 3;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void countOfMatchesFromRightChecker(){
+        int[] ordinals = {0,0,0,1,1};
+        int actual = pokerChecker.countOfMatchesFromRight(ordinals), expected = 2;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void fullHouseCheckerTest(){
+        HashMap<Integer, Card> playerHand = loadPlayerHand(twoOfClubs,twoOfSpades,kingOfSpades, kingOfHearts,kingOfClubs);
+        boolean actual = pokerChecker.fullHouseChecker(playerHand), expected = true;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void fullHouseCheckerTestFalse(){
+        HashMap<Integer, Card> playerHand = loadPlayerHand(threeOfSpades,fiveOfSpades,twoOfDiamonds,aceOfSpades,twoOfSpades);
+        boolean actual = pokerChecker.fullHouseChecker(playerHand), expected = false;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void countOfMatchesFromPosition2Checker(){
+        int[] ordinals = {0,0,0,1,1};
+        int actual = pokerChecker.countOfMatchesFromPosition2(ordinals), expected = 2;
+        Assert.assertEquals(expected,actual);
+    }
 }
