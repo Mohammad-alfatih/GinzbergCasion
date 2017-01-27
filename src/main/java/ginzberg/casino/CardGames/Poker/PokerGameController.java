@@ -27,7 +27,7 @@ public class PokerGameController {
     public void playPoker() {
 
 
-        while (pokerPlayer.getPlayAgain() == true) {
+
 //           //pokerPlayer.displayTurn("What game would you like to play? \n Enter '1' for 'Jacks or better" +
 //           //         "\n Enter '2' for 'Tens or Better'\n Enter '3' for 'Aces and Eights'\n Enter '4' for 'Double Bonus'");
 //            payout.setGamePayoutOdds(gameType.get(pokerPlayer.userInput.nextInt()));
@@ -43,7 +43,6 @@ public class PokerGameController {
             pokerPlayer.displayTurn(checker.getWinConditionThatIsMet(pokerCards.playerHand));
             pokerPlayer.setUserBalance(pokerPlayer.getUserBalance() + payout.payWinnings(checker.getWinConditionThatIsMet(pokerCards.playerHand)));
             pokerPlayer.displayUserBalance();
-            pokerPlayer.setPlayAgain(pokerPlayer.anotherRound());
-        }
+
     }
 }

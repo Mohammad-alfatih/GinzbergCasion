@@ -17,7 +17,7 @@ public class Casino {
         while (aUI.playAgain == true) {
             BlackJack newBJ = new BlackJack();
             newBJ.playRound(aUI);
-            aUI.anotherRound();
+            aUI.setPlayAgain(aUI.anotherRound());
         }
     }
 
@@ -25,7 +25,7 @@ public class Casino {
         while(aUI.playAgain == true) {
             Casino_Wars newCW = new Casino_Wars();
             newCW.playRound(aUI);
-            aUI.anotherRound();
+            aUI.setPlayAgain(aUI.anotherRound());
         }
     }
 
@@ -33,6 +33,7 @@ public class Casino {
         while(aUI.playAgain){
             PokerGameController pokerGameController = new PokerGameController();
             pokerGameController.playPoker();
+            aUI.setPlayAgain(aUI.anotherRound());
         }
     }
 
