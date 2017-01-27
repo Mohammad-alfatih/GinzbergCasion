@@ -49,26 +49,6 @@ public class Casino_Wars extends CardGame {
     }
 
 
-    /*
-    private void burnCards(CardDeck inputDeck, int burnCards){
-        for (int i = 0; i<burnCards ; i++) {
-            dumpCards.add(inputDeck.getNextCard());
-        }
-    }
-    */
-
-    // Make One Method, Modify userCard to Hand
-
-    /*
-    public boolean isUserCardGreaterThanDealerCard(Card userCard, Card dealerCard){
-        return userCard.getRank().ordinal() > dealerCard.getRank().ordinal();
-    }
-
-    public boolean isUserCardEqualDealerCard(Card userCard, Card dealerCard){
-        return userCard.getRank().ordinal() == dealerCard.getRank().ordinal();
-    }
-    */
-
     public int getCardScore(ArrayList<Card> aHand) {
         if (aHand.get(aHand.size() - 1).getRank() != Ranks.ACE) {
             return aHand.get(aHand.size() - 1).getRank().ordinal() + 1;
