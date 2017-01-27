@@ -12,11 +12,11 @@ public class Main {
         init = new Casino();
         initIO = new UserIO();
         initIO.firstWelcome();
-
+        int counter = 0;
         while(inCasino) {
-
-            init.play(initIO);
+            init.play(initIO, counter);
             initIO.additionalWelcome();
+            counter++;
 
         }
     }

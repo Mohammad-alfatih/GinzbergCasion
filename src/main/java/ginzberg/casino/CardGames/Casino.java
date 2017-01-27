@@ -9,6 +9,8 @@ import ginzberg.casino.CardGames.Poker.PokerGameController;
  * Created by ryangross on 1/25/17.
  */
 public class Casino {
+
+    String selection;
     AsciiImages images = new AsciiImages();
 
     public void playBJ(UserIO aUI) {
@@ -34,7 +36,7 @@ public class Casino {
 
 
     public void startGame(UserIO aUI) {
-        String selection = aUI.gameUserWantsToPlay();
+        selection = aUI.gameUserWantsToPlay();
         if (selection.equalsIgnoreCase("1")) {
             this.playBJ(aUI);
         } else if (selection.equalsIgnoreCase("2")){
@@ -44,10 +46,22 @@ public class Casino {
         }
     }
 
+    public void startGame2(UserIO aUI) {
 
-    public void play(UserIO anIO) {
-        startGame(anIO);
+        if (this.selection.equalsIgnoreCase("1")) {
+            this.playBJ(aUI);
+        } else if (this.selection.equalsIgnoreCase("2")){
+            this.playPoker(aUI);
+        } else if (this.selection.equalsIgnoreCase("3")) {
+            this.playWar(aUI);
+        }
     }
 
+    public void play(UserIO anIO, int playCounter) {
+        if (playCounter == 0) {
+            startGame(anIO);
+        } else startGame2(anIO);
+
+    }
 
 }
