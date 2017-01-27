@@ -1,6 +1,7 @@
 package ginzberg.casino.CardGamesTest;
 
 import ginzberg.casino.CardGames.CasinoWars.Casino_Wars;
+import ginzberg.casino.CardGames.UserIO;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,9 +11,11 @@ import org.junit.Test;
  */
 public class CasinoWarsTests {
     Casino_Wars casinoWars;
+    UserIO aUI;
 
     @Before
     public void setup(){
+        aUI = new UserIO(100, "Woo Man");
         casinoWars = new Casino_Wars();
         casinoWars.dealCards();
     }
@@ -35,5 +38,13 @@ public class CasinoWarsTests {
         Assert.assertTrue(!casinoWars.lessThanDealer());
     }
 
+    @Test
+    public void payOutTest(){
+        Assert.assertEquals(200, casinoWars.payOut(aUI,100), 1);
+    }
 
+    @Test
+    public void clearBetTest(){
+        Assert.assertEquals(0, casinoWars.clearBet(), 1);
+    }
 }
