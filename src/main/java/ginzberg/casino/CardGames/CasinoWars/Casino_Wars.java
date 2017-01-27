@@ -26,11 +26,6 @@ public class Casino_Wars extends CardGame {
     }
 
     // Initialize/shuffle deck
-
-
-
-
-
     public void dealCards() {
         /* inputDeck is the deck to deal from - can be userDeck or dealerDeck
         * burnCards is number of cards to burn prior to picking */
@@ -38,9 +33,6 @@ public class Casino_Wars extends CardGame {
         dealCard(userHand);
         dealCard(dealerHand);
     }
-
-
-
 
     public int warDrawCard(ArrayList<Card> aHand) {
 
@@ -108,7 +100,6 @@ public class Casino_Wars extends CardGame {
         }
         return answer;
     }
-
 
     public boolean greaterThanDealer() {
         return getCardScore(userHand) > getCardScore(dealerHand);
