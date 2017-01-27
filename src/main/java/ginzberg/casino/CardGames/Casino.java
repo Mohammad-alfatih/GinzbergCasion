@@ -9,41 +9,31 @@ import ginzberg.casino.CardGames.Poker.PokerGameController;
  */
 public class Casino {
 
-    // test
-    // mockito: optional
 
     public void playBJ(UserIO aUI) {
 
-        //if (aUI.playAgain) {
             BlackJack newBJ = new BlackJack();
             newBJ.playRound(aUI);
             aUI.setPlayAgain(aUI.anotherRound());
-        //}
     }
 
     public void playWar(UserIO aUI) {
-        //if (aUI.playAgain) {
             Casino_Wars newCW = new Casino_Wars();
             newCW.playRound(aUI);
             aUI.setPlayAgain(aUI.anotherRound());
-        //}
     }
 
     public void playPoker(UserIO aUI){
-        //if (aUI.playAgain){
             PokerGameController pokerGameController = new PokerGameController();
             pokerGameController.playPoker();
             aUI.setPlayAgain(aUI.anotherRound());
-        //}
     }
 
 
     public void startGame(UserIO aUI) {
         String selection = aUI.gameUserWantsToPlay();
         if (selection.equalsIgnoreCase("1")) {
-            //BlackJack newBJ = new BlackJack();
             this.playBJ(aUI);
-            // newBJ.playRound(aUI);
         } else if (selection.equalsIgnoreCase("2")){
             this.playPoker(aUI);
         } else if (selection.equalsIgnoreCase("3")) {
