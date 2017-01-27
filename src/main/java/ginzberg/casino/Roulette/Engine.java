@@ -347,7 +347,7 @@ public class Engine {
                 break;
 
             case "CLEAR ALL LOSING BETS":
-//                payout.clearLosingStraightUp(winningNumber);
+                payout.clearLosingStraightUp(winningNumber);
 //                payout.clearLosingBets(winningNumber, placeBet.column);
 //                payout.clearLosingBets(winningNumber, placeBet.dozen);
 //                payout.clearLosingBets(winningNumber, placeBet.redBlack);
