@@ -109,4 +109,17 @@ public class PokerTest {
         Assert.assertEquals(expected,actual);
     }
 
+    @Test
+    public void countOfMatchesFromLeftChecker(){
+        int[] ordinals = {0,0,0,1,1};
+        int actual = pokerChecker.countOfMatchesFromLeft(ordinals), expected = 3;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void countOfMatchesFromRightChecker(){
+        int[] ordinals = {0,0,0,1,1};
+        int actual = pokerChecker.countOfMatchesFromRight(ordinals), expected = 2;
+        Assert.assertEquals(expected,actual);
+    }
 }
