@@ -22,4 +22,18 @@ public class CasinoWarsTests {
         Assert.assertEquals(3,casinoWars.warDrawCard(casinoWars.getUserHand()));
         Assert.assertEquals(6,casinoWars.warDrawCard(casinoWars.getDealerHand()));
     }
+
+    @Test
+    public void getCardScoreTest(){
+        Assert.assertEquals(11, casinoWars.getCardScore(casinoWars.getUserHand()));
+        Assert.assertEquals(2, casinoWars.getCardScore(casinoWars.getDealerHand()));
+    }
+
+    @Test
+    public void greaterThanDealerTest(){
+        Assert.assertTrue(casinoWars.greaterThanDealer());
+        Assert.assertTrue(!casinoWars.lessThanDealer());
+    }
+
+
 }
