@@ -1,6 +1,7 @@
 package ginzberg.casino.CardGamesTest;
 
 import ginzberg.casino.CardGames.UserIO;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,8 +18,15 @@ public class UserIOTest {
 
     @Test
     public void getUserNameTest(){
-        System.out.println(wooMan.getUserName());
-        //Assert.assertTrue(wooMan.getUserName().equals("Woo man"));
+        String expectedName = wooMan.getUserName();
+        String actualName = "Woo Man";
+
+        String expectedBalanceMessage = "Your current balance is $100.0";
+        String actualbalanceMessage = wooMan.displayUserBalance();
+
+        Assert.assertTrue(expectedName.equals(actualName));
+        Assert.assertTrue(wooMan.getUserBalance()==100);
+        Assert.assertTrue(expectedBalanceMessage.equals(actualbalanceMessage));
     }
 
 
