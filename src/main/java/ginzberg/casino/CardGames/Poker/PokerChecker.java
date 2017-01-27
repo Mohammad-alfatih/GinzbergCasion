@@ -120,7 +120,6 @@ public class PokerChecker {
             return false;
     }
 
-
     public boolean checkForPairAroundPosition2(int[] rankOrdinalArray){
         if (rankOrdinalArray[1] == rankOrdinalArray[0] || rankOrdinalArray[1] == rankOrdinalArray[2]){
             return true;
@@ -233,7 +232,6 @@ public class PokerChecker {
             return true;
         } else {return false;}
     }
-
 
     public String getWinConditionThatIsMet(HashMap<Integer, Card> playerHand){
         if (flushChecker(playerHand) && straightChecker(playerHand) && royalChecker(playerHand)){

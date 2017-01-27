@@ -138,4 +138,11 @@ public class PokerTest {
         boolean actual = pokerChecker.fullHouseChecker(playerHand), expected = false;
         Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void countOfMatchesFromPosition2Checker(){
+        int[] ordinals = {0,0,0,1,1};
+        int actual = pokerChecker.countOfMatchesFromPosition2(ordinals), expected = 2;
+        Assert.assertEquals(expected,actual);
+    }
 }
