@@ -1,6 +1,7 @@
 package ginzberg.casino.CardGamesTest;
 
 import ginzberg.casino.CardGames.CasinoWars.Casino_Wars;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,7 +19,7 @@ public class CasinoWarsTests {
 
     @Test
     public void warDrawCard_Test(){
-        casinoWars.warDrawCard(casinoWars.getUserHand());
-        System.out.println("The following cards wer drawn after war: \n" + casinoWars.getUserHand().toString());
+        Assert.assertEquals(3,casinoWars.warDrawCard(casinoWars.getUserHand()));
+        Assert.assertEquals(6,casinoWars.warDrawCard(casinoWars.getDealerHand()));
     }
 }
