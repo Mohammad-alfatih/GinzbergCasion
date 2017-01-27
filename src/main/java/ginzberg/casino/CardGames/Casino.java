@@ -2,7 +2,7 @@ package ginzberg.casino.CardGames;
 
 import ginzberg.casino.CardGames.BlackJack.BlackJack;
 import ginzberg.casino.CardGames.CasinoWars.Casino_Wars;
-import ginzberg.casino.CardGames.Poker.PokerStarter;
+import ginzberg.casino.CardGames.Poker.PokerGameController;
 
 /**
  * Created by ryangross on 1/25/17.
@@ -30,9 +30,9 @@ public class Casino {
     }
 
     public void playPoker(UserIO aUI){
-
         while(aUI.playAgain){
-            ;
+            PokerGameController pokerGameController = new PokerGameController();
+            pokerGameController.playPoker();
         }
     }
 
