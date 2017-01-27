@@ -74,23 +74,79 @@ public class Payout extends PlaceBet {
         }
     }
 
-    public Integer payoutWinningBets(int winningNumber, Map<Integer, Integer> map, int payout, String betType) {
-        Set<Integer> set = createSet(map);
+//    public Integer payoutWinningBets(int winPayout, Map<Integer, Integer> betMap, int betPayout, String betType) {
+//        Set<Integer> set = createSet(betMap);
+//        Iterator<Integer> itr = createIterator(set);
+//
+//        while (itr.hasNext()) {
+//            Integer next = itr.next();
+//            winTest = betMap.get(next);
+//
+//            if (next == winTest) {
+//                int bet = betMap.get(next);
+//                temp += payouts.get(betType) * bet;
+//
+//                if (bet != 0) {
+//                    System.out.println("Paying out $" + bet + " on " + getBetType(betType) + " " + payout + "\n");
+//                }
+//                betMap.replace(next, 0);
+//            }
+//        }
+//        return temp;
+//    }
+
+    public Integer payoutWinningBets(int winningNumber, Map<Integer, Integer> placeBetMap, Map<Integer, Integer> winBetMap, String betType) {
+        Set<Integer> set = createSet(placeBetMap);
         Iterator<Integer> itr = createIterator(set);
+        int winPayout = 0;
+        int testPayout = 0;
+        int payout = 0;
 
         while (itr.hasNext()) {
             Integer next = itr.next();
+            winPayout = winBetMap.get(winningNumber);
+            testPayout = winBetMap.get(next);
 
-            if (next.equals(winningNumber)) {
-                int bet = map.get(next);
-                bet *= payouts.get(betType);
+            if (winPayout == testPayout) {
+                int bet = placeBetMap.get(next);
+                payout += payouts.get(betType) * bet;
 
                 if (bet != 0) {
-                    System.out.println("Paying out $" + bet + " on " + getBetType(betType) + " " + payout + "\n");
+                    System.out.println("Paying out $");
                 }
-                map.replace(next, 0);
+                placeBetMap.replace(next, 0);
             }
         }
+        return payout;
+    }
+
+    public Integer payoutWinningHalfBet(int winningNumber, String betType) {
+        int payout = 0;
+        Set<Integer> set = super.highLow.keySet();
+        Iterator<Integer> itr = set.iterator();
+
+        while (itr.hasNext()) {
+            Integer next = itr.next();
+            System.out.println("next: " + next);
+            int winPayout = super.getWinningHalfBet(winningNumber);
+            System.out.println("winPayout: " + winPayout);
+            int compPayout = super.getWinningHalfBet(next);
+            System.out.println("compPayout: " + compPayout);
+
+            if (winPayout == compPayout) {
+                int bet = super.highLow.get(next);
+                System.out.println("bet: " + bet);
+                int thisPOamount = payouts.get(betType);
+                System.out.println("thisPOamount: " + thisPOamount);
+                int thisPayout = (payouts.get(betType) * bet);
+                System.out.println("thisPayout: " + thisPayout);
+                payout += thisPayout;
+                System.out.println("payout: " + payout);
+                super.highLow.replace(next, 0);
+                System.out.println("updated bet: " + super.highLow.get(next));
+            }
+        }
+        System.out.println(payout);
         return payout;
     }
 

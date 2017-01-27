@@ -206,7 +206,7 @@ public class Engine {
                 out.casinoOutput("How much would you like to bet on " + holder + "?");
                 input = in.userInput();
                 amount = in.parseToInteger(input);
-                placeBet.setHighLow(Integer.valueOf(number), amount);
+                placeBet.highLow.replace(Integer.valueOf(number), amount);
                 out.casinoOutput("");
                 result = "SPIN";
                 break;
@@ -365,55 +365,87 @@ public class Engine {
                 break;
 
             case "APPOLOGIZE TO PLAYER":
-                out.casinoOutput("Sorry...\n");
+//                out.casinoOutput("Sorry...\n");
                 result = "PAYOUT ALL WINNING BETS";
                 break;
 
             case "PAYOUT ALL WINNING BETS":
-                tempInteger = bet.getWinningHalfBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.highLow, tempInteger, "E");
-                tempInteger = bet.getWinningEvenOddBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.evenOdd, tempInteger, "F");
-                tempInteger = bet.getWinningRedBlackBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.redBlack, tempInteger, "D");
-                tempInteger = bet.getWinningDozenBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.dozen, tempInteger, "C");
-                tempInteger = bet.getWinningColumnBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.column, tempInteger, "B");
-                tempInteger = bet.getWinningLineUpBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.line, tempInteger, "K");
-                tempInteger = bet.getWinningLineDownBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.line, tempInteger, "K");
-                tempInteger = bet.getWinningToplineBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.topline, tempInteger, "J");
-                tempInteger = bet.getWinningCornerUpLeftBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.corner, tempInteger, "I");
-                tempInteger = bet.getWinningCornerUpRightBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.corner, tempInteger, "I");
-                tempInteger = bet.getWinningCornerDownRightBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.corner, tempInteger, "I");
-                tempInteger = bet.getWinningCornerDownLeftBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.corner, tempInteger, "I");
-                tempInteger = bet.getWinningStreetBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.street, tempInteger, "H");
-                tempInteger = bet.getWinningCourtesyBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.courtesy, tempInteger, "M");
-                tempInteger = bet.getWinningZeroDoubleZeroBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.zeroDoubleZero, tempInteger, "L");
-                tempInteger = bet.getWinningSplitUpBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.splitDown, tempInteger, "GD");
-                tempInteger = bet.getWinningSplitDownBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.splitDown, tempInteger, "GD");
-                tempInteger = bet.getWinningSplitLeftBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.splitRight, tempInteger, "GR");
-                tempInteger = bet.getWinningSplitRightBet(winningNumber);
-                payout.payoutWinningBets(winningNumber, placeBet.splitRight, tempInteger, "GR");
-                payout.payoutWinningStraightUp(winningNumber);
-                result = "QUIT";
-                break;
+                winnings = 0;
+                out.casinoOutput("Winnings: $" + winnings);
+                winnings += payout.payoutWinningHalfBet(winningNumber, "E");
+                out.casinoOutput("$" + winnings);
+
+
+                winnings += payout.payoutWinningStraightUp(winningNumber);
+                result = "CONGRATULATE PLAYER";
+
+//            case "PAYOUT ALL WINNING BETS":
+//                winnings = 0;
+//                out.casinoOutput("Winnings: $" + winnings);
+//                tempInteger = bet.getWinningHalfBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.highLow, tempInteger, "E");
+//                tempInteger = bet.getWinningEvenOddBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.evenOdd, tempInteger, "F");
+//                tempInteger = bet.getWinningRedBlackBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.redBlack, tempInteger, "D");
+//                tempInteger = bet.getWinningDozenBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.dozen, tempInteger, "C");
+//                tempInteger = bet.getWinningColumnBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.column, tempInteger, "B");
+//                tempInteger = bet.getWinningLineUpBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.line, tempInteger, "K");
+//                tempInteger = bet.getWinningLineDownBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.line, tempInteger, "K");
+//                tempInteger = bet.getWinningToplineBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.topline, tempInteger, "J");
+//                tempInteger = bet.getWinningCornerUpLeftBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.corner, tempInteger, "I");
+//                tempInteger = bet.getWinningCornerUpRightBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.corner, tempInteger, "I");
+//                tempInteger = bet.getWinningCornerDownRightBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.corner, tempInteger, "I");
+//                tempInteger = bet.getWinningCornerDownLeftBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.corner, tempInteger, "I");
+//                tempInteger = bet.getWinningStreetBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.street, tempInteger, "H");
+//                tempInteger = bet.getWinningCourtesyBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.courtesy, tempInteger, "M");
+//                tempInteger = bet.getWinningZeroDoubleZeroBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.zeroDoubleZero, tempInteger, "L");
+//                tempInteger = bet.getWinningSplitUpBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.splitDown, tempInteger, "GD");
+//                tempInteger = bet.getWinningSplitDownBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.splitDown, tempInteger, "GD");
+//                tempInteger = bet.getWinningSplitLeftBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.splitRight, tempInteger, "GR");
+//                tempInteger = bet.getWinningSplitRightBet(winningNumber);
+//                out.casinoOutput("tempInteger = " + tempInteger);
+//                winnings += payout.payoutWinningBets(winningNumber, placeBet.splitRight, tempInteger, "GR");
+//                winnings += payout.payoutWinningStraightUp(winningNumber);
+//                result = "CONGRATULATE PLAYER";
+//                break;
 
             case "CONGRATULATE PLAYER":
-                // congratulate if the player won
+                out.casinoOutput("Winnings: $" + winnings);
+                result = "QUIT";
                 break;
             case "REMOVE MARKER":
                 // dealer removes marker
