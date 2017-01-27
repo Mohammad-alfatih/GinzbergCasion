@@ -21,14 +21,14 @@ public class PokerCardHandler extends AbstractCardGame{
         cardDeck.shuffle();
     }
 
-    HashMap<Integer, Card> playerHand = new HashMap<>(sizeOfHand);
+    public HashMap<Integer, Card> playerHand = new HashMap<>(sizeOfHand);
     {
         for ( int i = 0; i < sizeOfHand; i++) {
             playerHand.put(i, cardDeck.getNextCard());
         }
     }
 
-    HashMap<Integer, Boolean> cardsToReplace = new HashMap<>();
+    public HashMap<Integer, Boolean> cardsToReplace = new HashMap<>();
     {
         for ( int i = 0; i < sizeOfHand; i++) {
             cardsToReplace.put(i, false);
@@ -49,7 +49,7 @@ public class PokerCardHandler extends AbstractCardGame{
         return hand;
     }
 
-    void setCardsToReplace(int[] cardNumber) {
+    public void setCardsToReplace(int[] cardNumber) {
         for (int i = 0; i < cardNumber.length; i++) {
             cardsToReplace.put(cardNumber[i], true);
         }

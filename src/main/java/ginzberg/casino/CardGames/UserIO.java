@@ -9,12 +9,10 @@ import java.util.Scanner;
  */
 public class UserIO {
 
-    // Should these be static?
     protected static double userBalance = 100.0;
     public static String userName;
     public Scanner userInput = new Scanner(System.in);
     protected boolean playAgain = true;
- //   protected int currentBet;
     AsciiImages images = new AsciiImages();
 
     public UserIO(double aBalance, String aName) {
@@ -41,12 +39,7 @@ public class UserIO {
         return this.userInput;
     }
 
-    public boolean getPlayAgain() {
-        return this.playAgain;
-    }
-
     public void getNameIO() {
-        //System.out.println(images.greeting());
         userName = userInput.next();
     }
 
@@ -60,7 +53,8 @@ public class UserIO {
 
     public void additionalWelcome() {
         images.showJoker();
-        System.out.println("additional welcome");
+        System.out.println("Your current balance is " + getUserBalance());
+        System.out.println("What game would you like to play next?");
     }
 
     // Takes in a String (User Input), and starts a game based on said String
@@ -74,7 +68,6 @@ public class UserIO {
 
     public int askForBet() {
         String answer;
-        // switch Statement
 
         System.out.println("How much would you like to bet?");
 
@@ -83,9 +76,6 @@ public class UserIO {
         return Integer.parseInt(answer);
     }
 
-    /*public void displayScore(int userScore, int dealerScore) {
-        System.out.println("You: " + userScore + "Dealer: " + dealerScore);
-    } */
 
     public void displayTurn(String aString) {
         System.out.println(aString);
@@ -98,7 +88,6 @@ public class UserIO {
         return answer;
     }
 
-    // Current Balance Method
     public String displayUserBalance() {
         String answer = "Your current balance is $" + userBalance;
         System.out.println(answer);

@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Created by anthonypajerowski on 1/25/17.
  */
-class PokerPayout {
+public class PokerPayout {
 
     private int betSize;
 
@@ -24,15 +24,15 @@ class PokerPayout {
     gamePayoutOdds.put("royalFlush", 800);
 }
 
-    protected void setBetSize(int bet) {
+    public void setBetSize(int bet) {
         betSize = bet;
     }
 
-    protected int getBetSize(){
+    public int getBetSize(){
         return betSize;
     }
 
-    protected double payWinnings(String outcome) {
+    public double payWinnings(String outcome) {
         return getBetSize() * gamePayoutOdds.get(outcome);
     }
 }
