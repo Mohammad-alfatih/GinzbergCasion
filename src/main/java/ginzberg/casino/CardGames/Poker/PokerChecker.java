@@ -149,23 +149,6 @@ public class PokerChecker {
             return false;
         }
     }
-    public boolean checkForTensOrBetterPairAroundPosition2(int[] rankOrdinalArray){
-        if (rankOrdinalArray[1] == rankOrdinalArray[0] && (rankOrdinalArray[1] == 0 || rankOrdinalArray[1] > 8)){
-            return true;
-        } else if (rankOrdinalArray[1] == rankOrdinalArray[2] && (rankOrdinalArray[1] == 0 || rankOrdinalArray[1] > 8)) {
-            return true;
-        } else { return false;}
-    }
-
-    public boolean checkForTensOrBetterPairAroundPosition4(int[] rankOrdinalArray){
-        if (rankOrdinalArray[3] == rankOrdinalArray[2] && (rankOrdinalArray[3] == 0 || rankOrdinalArray[3] > 8)){
-            return true;
-        } else if (rankOrdinalArray[3] == rankOrdinalArray[4] && (rankOrdinalArray[3] == 0 || rankOrdinalArray[3] > 8)){
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     public boolean twoPairChecker(HashMap<Integer, Card> hand){
         int[] rankOrdinalArray = convertToRankOrdinalArray(hand);

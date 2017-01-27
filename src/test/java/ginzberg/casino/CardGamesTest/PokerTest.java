@@ -190,7 +190,7 @@ public class PokerTest {
 
     @Test
     public void checkForJacksOrBetterPairAroundPosition2(){
-        int[] ordinals = {2,10,10,10,11};
+        int[] ordinals = {2,10,10,9,11};
         boolean actual = pokerChecker.checkForJacksOrBetterPairAroundPosition2(ordinals), expected = true;
         Assert.assertEquals(expected,actual);
     }
@@ -201,4 +201,20 @@ public class PokerTest {
         boolean actual = pokerChecker.checkForJacksOrBetterPairAroundPosition2(ordinals), expected = false;
         Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void checkForJacksOrBetterPairAroundPosition4(){
+        int[] ordinals = {2,10,10,11,11};
+        boolean actual = pokerChecker.checkForJacksOrBetterPairAroundPosition4(ordinals), expected = true;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void checkForJacksOrBetterPairAroundPosition4False(){
+        int[] ordinals = {2,8,9,9,11};
+        boolean actual = pokerChecker.checkForJacksOrBetterPairAroundPosition4(ordinals), expected = false;
+        Assert.assertEquals(expected,actual);
+    }
+
+
 }
