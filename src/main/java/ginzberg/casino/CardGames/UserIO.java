@@ -51,13 +51,13 @@ public class UserIO {
     }
 
     public void welcome(){
-
         images.showJoker();
         System.out.println("Welcome the Ginzberger Casino!\n" +
                 "What is your name?");
         this.getNameIO();
         System.out.println("Cool, " + this.userName + ". Here's $100. Good luck!");
     }
+
     // Takes in a String (User Input), and starts a game based on said String
     // Exception Handling...
     public String gameUserWantsToPlay() {
@@ -78,9 +78,9 @@ public class UserIO {
         return Integer.parseInt(answer);
     }
 
-    public void displayScore(int userScore, int dealerScore) {
+    /*public void displayScore(int userScore, int dealerScore) {
         System.out.println("You: " + userScore + "Dealer: " + dealerScore);
-    }
+    } */
 
     public void displayTurn(String aString) {
         System.out.println(aString);

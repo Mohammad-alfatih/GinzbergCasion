@@ -26,5 +26,10 @@ public class AsciiImages {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        try {
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
