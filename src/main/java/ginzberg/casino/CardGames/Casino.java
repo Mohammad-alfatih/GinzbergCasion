@@ -14,24 +14,30 @@ public class Casino {
     AsciiImages images = new AsciiImages();
 
     public void playBJ(UserIO aUI) {
+        do{
             images.showLetsPlayBlackJack();
             BlackJack newBJ = new BlackJack();
             newBJ.playRound(aUI);
             aUI.setPlayAgain(aUI.anotherRound());
+        } while(aUI.getPlayAgain());
     }
 
     public void playWar(UserIO aUI) {
+        do {
             images.showLetsPlayCasinoWar();
             Casino_Wars newCW = new Casino_Wars();
             newCW.playRound(aUI);
             aUI.setPlayAgain(aUI.anotherRound());
+        } while(aUI.getPlayAgain());
     }
 
     public void playPoker(UserIO aUI){
-            images.showLetsPlayPoker();
-            PokerGameController pokerGameController = new PokerGameController();
-            pokerGameController.playPoker();
-            aUI.setPlayAgain(aUI.anotherRound());
+            do {
+                images.showLetsPlayPoker();
+                PokerGameController pokerGameController = new PokerGameController();
+                pokerGameController.playPoker();
+                aUI.setPlayAgain(aUI.anotherRound());
+            } while(aUI.getPlayAgain());
     }
 
 

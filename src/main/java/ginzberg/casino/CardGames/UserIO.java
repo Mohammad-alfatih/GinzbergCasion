@@ -99,4 +99,8 @@ public class UserIO {
             this.playAgain = false;
         }
     }
+
+    public boolean getPlayAgain() {
+        return this.playAgain;
+    }
 }

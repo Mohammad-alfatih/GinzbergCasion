@@ -39,9 +39,9 @@ public class PokerGameController {
             pokerPlayer.displayTurn(pokerCards.showHand());
             pokerPlayer.displayTurn(checker.getWinConditionThatIsMet(pokerCards.playerHand));
             if(checker.getWinConditionThatIsMet(pokerCards.playerHand).equals("lostHand")) {
-                images.showWin();
-            } else {
                 images.showLose();
+            } else {
+                images.showWin();
             }
             pokerPlayer.setUserBalance(pokerPlayer.getUserBalance() + payout.payWinnings(checker.getWinConditionThatIsMet(pokerCards.playerHand)));
             pokerPlayer.displayUserBalance();
