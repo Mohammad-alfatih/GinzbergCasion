@@ -58,4 +58,11 @@ public class PokerTest {
         boolean actual = pokerChecker.flushChecker(playerHand), expected = true;
         Assert.assertEquals(actual, expected);
     }
+
+    @Test
+    public void straightChecker(){
+        HashMap<Integer, Card> playerHand = loadPlayerHand(aceOfSpades,twoOfSpades,threeOfSpades,fourOfSpades,fiveOfSpades);
+        boolean actual = pokerChecker.straightChecker(playerHand), expected = true;
+        Assert.assertEquals(actual,expected);
+    }
 }
