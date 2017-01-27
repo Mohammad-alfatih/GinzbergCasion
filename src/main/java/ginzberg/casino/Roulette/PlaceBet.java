@@ -9,20 +9,20 @@ import java.util.Map;
 public class PlaceBet extends Bet {
     private Input in;
     private Output out;
-    private Map<String, Integer> straightUp;
-    private Map<Integer, Integer> column;
-    private Map<Integer, Integer> dozen;
-    private Map<Integer, Integer> redBlack;
-    private Map<Integer, Integer> highLow;
-    private Map<Integer, Integer> evenOdd;
-    private Map<Integer, Integer> splitDown;
-    private Map<Integer, Integer> splitRight;
-    private Map<Integer, Integer> street;
-    private Map<Integer, Integer> corner;
-    private Map<Integer, Integer> topline;
-    private Map<Integer, Integer> line;
-    private Map<Integer, Integer> zeroDoubleZero;
-    private Map<Integer, Integer> courtesy;
+    Map<String, Integer> straightUp;
+    Map<Integer, Integer> column;
+    Map<Integer, Integer> dozen;
+    Map<Integer, Integer> redBlack;
+    Map<Integer, Integer> highLow;
+    Map<Integer, Integer> evenOdd;
+    Map<Integer, Integer> splitDown;
+    Map<Integer, Integer> splitRight;
+    Map<Integer, Integer> street;
+    Map<Integer, Integer> corner;
+    Map<Integer, Integer> topline;
+    Map<Integer, Integer> line;
+    Map<Integer, Integer> zeroDoubleZero;
+    Map<Integer, Integer> courtesy;
 
     PlaceBet() {
         in = new Input();
@@ -55,6 +55,10 @@ public class PlaceBet extends Bet {
         constructLine();
         constructZeroDoubleZero();
         constructCourtesy();
+    }
+
+    public String chooseBetType(String input) {
+        return getBetType(input);
     }
 
     public Integer getStraightUp(String key) {

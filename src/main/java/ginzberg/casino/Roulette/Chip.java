@@ -1,5 +1,7 @@
 package ginzberg.casino.Roulette;
 
+import ginzberg.casino.Games.UserIO;
+
 /**
  * Created by rickjackson on 1/26/17.
  */
@@ -10,11 +12,19 @@ public class Chip {
     private Integer chips;
     private Integer minimumBet;
 
-    Chip(double userBalance) {
+    Chip() {
         out = new Output();
         in = new Input();
-        balance = userBalance;
+        balance = 0.00;
         chips = 0;
+    }
+
+    public void getUserBalance(UserIO uio) {
+        balance = uio.getUserBalance();
+    }
+
+    public void setUserBalance(UserIO uio) {
+
     }
 
     public Integer requestChips(Double balance) {
@@ -23,10 +33,12 @@ public class Chip {
 
         if (request >= 1 && request <= balance) {
             return request;
-        } else if (request == 0) {
+        } else if (request > balance) {
             return 0;
+        } else if (response == "QUIT"){
+            return -1;
         } else {
-            return null;
+            return -2;
         }
     }
 

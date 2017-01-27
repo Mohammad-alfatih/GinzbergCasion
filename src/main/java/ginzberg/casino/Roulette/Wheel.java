@@ -19,14 +19,14 @@ public class Wheel {
         constructPocketNumberSequence();
     }
 
-    private int getWinningNumber() {
+    public int getWinningNumber() {
         int pocket = generateRandomNumber();
         ballSpinning = false;
 
         return getWinningNumberFromPocketSequence(pocket);
     }
 
-    private void spinBall() {
+    public void spinBall() {
         ballSpinning = true;
     }
 
