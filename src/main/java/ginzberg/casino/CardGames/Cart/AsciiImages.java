@@ -44,6 +44,16 @@ public class AsciiImages {
         readAndDisplay(rouletteString);
     }
 
+    public void showWin() {
+        String winString = rootLoc + "youWon.txt";
+        readAndDisplay(winString);
+    }
+
+    public void showLose() {
+        String loseString = rootLoc + "youLost.txt";
+        readAndDisplay(loseString);
+    }
+
     public void readAndDisplay(String fileName){
         BufferedReader br = null;
         try {

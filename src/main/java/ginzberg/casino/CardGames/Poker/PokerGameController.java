@@ -1,4 +1,5 @@
 package ginzberg.casino.CardGames.Poker;
+import ginzberg.casino.CardGames.Cart.AsciiImages;
 import ginzberg.casino.CardGames.UserIO;
 
 import java.util.HashMap;
@@ -15,6 +16,7 @@ public class PokerGameController {
     PokerInputParser parser = new PokerInputParser();
     PokerChecker checker = new PokerChecker();
     UserIO pokerPlayer = new UserIO();
+    AsciiImages images = new AsciiImages();
 
     HashMap<Integer, String> gameType = new HashMap<>();
     {
@@ -36,6 +38,11 @@ public class PokerGameController {
             pokerCards.replaceCards();
             pokerPlayer.displayTurn(pokerCards.showHand());
             pokerPlayer.displayTurn(checker.getWinConditionThatIsMet(pokerCards.playerHand));
+            if(checker.getWinConditionThatIsMet(pokerCards.playerHand).equals("lostHand")) {
+                images.showWin();
+            } else {
+                images.showLose();
+            }
             pokerPlayer.setUserBalance(pokerPlayer.getUserBalance() + payout.payWinnings(checker.getWinConditionThatIsMet(pokerCards.playerHand)));
             pokerPlayer.displayUserBalance();
 
