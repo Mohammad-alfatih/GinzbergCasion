@@ -145,4 +145,20 @@ public class PokerTest {
         int actual = pokerChecker.countOfMatchesFromPosition2(ordinals), expected = 2;
         Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void tripsCheckerTest(){
+        HashMap<Integer, Card> playerHand = loadPlayerHand(twoOfClubs,fiveOfSpades,twoOfDiamonds,aceOfSpades,twoOfSpades);
+        boolean actual = pokerChecker.tripsChecker(playerHand), expected = true;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void tripsCheckerTestFalse(){
+        HashMap<Integer, Card> playerHand = loadPlayerHand(threeOfSpades,fiveOfSpades,twoOfDiamonds,aceOfSpades,twoOfSpades);
+        boolean actual = pokerChecker.tripsChecker(playerHand), expected = false;
+        Assert.assertEquals(expected,actual);
+    }
+
+
 }
