@@ -2,6 +2,7 @@ package ginzberg.casino.CardGames;
 
 import ginzberg.casino.CardGames.BlackJack.BlackJack;
 import ginzberg.casino.CardGames.CasinoWars.Casino_Wars;
+import ginzberg.casino.CardGames.Poker.PokerStarter;
 
 /**
  * Created by ryangross on 1/25/17.
@@ -28,6 +29,13 @@ public class Casino {
         }
     }
 
+    public void playPoker(UserIO aUI){
+
+        while(aUI.playAgain){
+            ;
+        }
+    }
+
 
     public void startGame(UserIO aUI) {
         String selection = aUI.gameUserWantsToPlay();
@@ -35,6 +43,8 @@ public class Casino {
             //BlackJack newBJ = new BlackJack();
             this.playBJ(aUI);
             // newBJ.playRound(aUI);
+        } else if (selection.equalsIgnoreCase("2")){
+            this.playPoker(aUI);
         } else if (selection.equalsIgnoreCase("3")) {
             this.playWar(aUI);
         }
