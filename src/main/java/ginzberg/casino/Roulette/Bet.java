@@ -88,7 +88,7 @@ public class Bet {
         }
     }
 
-    public int getWinningHalfBet(int winningNumber) {
+    public static int getWinningHalfBet(int winningNumber) {
         int half;
 
         if (winningNumber >= 1 && winningNumber <= 18) {

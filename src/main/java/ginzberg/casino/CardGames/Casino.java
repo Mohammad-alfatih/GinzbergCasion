@@ -4,6 +4,8 @@ import ginzberg.casino.CardGames.BlackJack.BlackJack;
 import ginzberg.casino.CardGames.Cart.AsciiImages;
 import ginzberg.casino.CardGames.CasinoWars.Casino_Wars;
 import ginzberg.casino.CardGames.Poker.PokerGameController;
+import ginzberg.casino.Roulette.Engine;
+import ginzberg.casino.Roulette.Roulette_Main;
 
 /**
  * Created by ryangross on 1/25/17.
@@ -38,6 +40,16 @@ public class Casino {
                 pokerGameController.playPoker();
                 aUI.setPlayAgain(aUI.anotherRound());
             } while(aUI.getPlayAgain());
+    }
+
+    public void playRoulette(UserIO aUI){
+        do {
+            images.showLetsPlayRoulette();
+            Roulette_Main rouletteMain = new Roulette_Main();
+            Engine engine = new Engine();
+            engine.run();
+            aUI.setPlayAgain(aUI.anotherRound());
+        } while(aUI.getPlayAgain());
     }
 
 
