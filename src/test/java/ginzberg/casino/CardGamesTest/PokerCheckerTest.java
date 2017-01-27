@@ -223,4 +223,13 @@ public class PokerCheckerTest {
         boolean actual = pokerChecker.twoPairChecker(playerHand), expected = true;
         Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void jacksOrBetterChecker(){
+        HashMap<Integer, Card> playerHand = loadPlayerHand(aceOfSpades,aceOfDiamonds,twoOfDiamonds,fourOfSpades,fiveOfSpades);
+        boolean actual = pokerChecker.jacksOrBetterChecker(playerHand), expected = true;
+        Assert.assertEquals(expected,actual);
+    }
+
+
 }
