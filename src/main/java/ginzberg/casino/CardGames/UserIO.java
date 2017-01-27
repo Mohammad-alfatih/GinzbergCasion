@@ -1,5 +1,7 @@
 package ginzberg.casino.CardGames;
 
+import ginzberg.casino.CardGames.Cart.AsciiImages;
+
 import java.util.Scanner;
 
 /**
@@ -13,7 +15,7 @@ public class UserIO {
     public Scanner userInput = new Scanner(System.in);
     protected boolean playAgain = true;
  //   protected int currentBet;
-    //AsciiImages images = new AsciiImages();
+    AsciiImages images = new AsciiImages();
 
     public UserIO(double aBalance, String aName) {
         this.userBalance = aBalance;
@@ -48,8 +50,9 @@ public class UserIO {
         userName = userInput.next();
     }
 
-    public void welcome() {
+    public void welcome(){
 
+        images.showJoker();
         System.out.println("Welcome the Ginzberger Casino!\n" +
                 "What is your name?");
         this.getNameIO();

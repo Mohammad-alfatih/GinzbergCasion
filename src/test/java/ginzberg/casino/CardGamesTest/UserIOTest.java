@@ -29,5 +29,4 @@ public class UserIOTest {
         Assert.assertTrue(expectedBalanceMessage.equals(actualbalanceMessage));
     }
 
-
 }
