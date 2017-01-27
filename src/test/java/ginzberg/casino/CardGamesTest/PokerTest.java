@@ -173,4 +173,32 @@ public class PokerTest {
         boolean actual = pokerChecker.checkForPairAroundPosition2(ordinals), expected = false;
         Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void checkForPairAroundPosition4(){
+        int[] ordinals = {2,9,9,10,10};
+        boolean actual = pokerChecker.checkForPairAroundPosition4(ordinals), expected = true;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void checkForPairAroundPosition4False(){
+        int[] ordinals = {2,8,9,10,11};
+        boolean actual = pokerChecker.checkForPairAroundPosition4(ordinals), expected = false;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void checkForJacksOrBetterPairAroundPosition2(){
+        int[] ordinals = {2,10,10,10,11};
+        boolean actual = pokerChecker.checkForJacksOrBetterPairAroundPosition2(ordinals), expected = true;
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void checkForJacksOrBetterPairAroundPosition2False(){
+        int[] ordinals = {2,8,9,9,11};
+        boolean actual = pokerChecker.checkForJacksOrBetterPairAroundPosition2(ordinals), expected = false;
+        Assert.assertEquals(expected,actual);
+    }
 }
